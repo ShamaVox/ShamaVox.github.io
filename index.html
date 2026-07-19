@@ -11,7 +11,7 @@
 <style>
 :root{
   --sapphire:#0F172A; --sapphire-soft:#1E293B;
-  --slate:#64748B; --slate-light:#94A3B8;
+  --slate:#516074; --slate-light:#7A8798;
   --alabaster:#F8FAFC; --line:#E2E8F0; --accent:#1D4ED8;
   --display:'Playfair Display',Georgia,serif;
   --body:'Inter','Helvetica Neue',Arial,sans-serif;
@@ -25,7 +25,7 @@ body{margin:0;background:var(--alabaster);color:var(--sapphire);
 a{color:inherit;text-decoration:none;}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--slate);font-weight:500;margin:0;}
 
 /* ---- NAV ---- */
@@ -56,8 +56,8 @@ a{color:inherit;text-decoration:none;}
   font-size:clamp(46px,7.4vw,88px);line-height:.98;letter-spacing:-.03em;margin:18px 0 0;}
 .hero .slogan{font-family:var(--display);font-style:italic;font-weight:400;
   font-size:clamp(19px,2.3vw,27px);color:var(--slate);margin:16px 0 0;letter-spacing:-.01em;}
-.hero-sub{max-width:56ch;font-size:clamp(14.5px,1.25vw,16px);color:var(--sapphire-soft);
-  font-weight:300;margin:22px 0 0;line-height:1.68;}
+.hero-sub{max-width:56ch;font-size:clamp(15.5px,1.35vw,17px);color:var(--sapphire-soft);
+  font-weight:400;margin:22px 0 0;line-height:1.7;}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
 .btn{font-size:12.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
   padding:15px 28px;border-radius:2px;transition:all .25s;display:inline-block;}
@@ -71,7 +71,7 @@ a{color:inherit;text-decoration:none;}
 .portrait .frame{aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:3px;
   background:linear-gradient(150deg,#E8EDF3 0%,#DCE3EC 60%,#CFD8E3 100%);
   display:flex;align-items:center;justify-content:center;}
-.portrait .frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
 .portrait .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--slate);text-align:center;padding:20px;line-height:1.9;}
 .portrait::after{content:"";position:absolute;right:-14px;bottom:-14px;width:56%;height:38%;
@@ -87,7 +87,7 @@ a{color:inherit;text-decoration:none;}
 .metric .fig{font-family:var(--display);font-weight:500;font-size:clamp(31px,4vw,47px);
   line-height:1;letter-spacing:-.02em;display:block;}
 .metric .lbl{display:block;margin-top:12px;font-size:13px;font-weight:500;line-height:1.4;}
-.metric .note{display:block;margin-top:4px;font-size:12px;color:var(--slate);font-weight:300;line-height:1.45;}
+.metric .note{display:block;margin-top:6px;font-size:12.5px;color:var(--slate);font-weight:400;line-height:1.5;}
 
 /* ---- SECTIONS ---- */
 .section{padding:clamp(58px,9vh,92px) 0;}
@@ -100,11 +100,11 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
   gap:clamp(14px,3vw,40px);padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;}
 .rec .co{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--sapphire);font-weight:500;}
-.rec .txt{margin:0;font-size:15.5px;font-weight:300;line-height:1.62;color:var(--sapphire-soft);}
+.rec .txt{margin:0;font-size:16px;font-weight:400;line-height:1.68;color:var(--sapphire-soft);}
 .rec .txt strong{font-weight:500;color:var(--sapphire);}
 .rec .num{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:500;
   letter-spacing:-.02em;line-height:1.1;text-align:right;}
-.rec .num small{display:block;font-family:var(--body);font-size:11.5px;font-weight:300;
+.rec .num small{display:block;font-family:var(--body);font-size:12px;font-weight:400;
   letter-spacing:0;color:var(--slate);margin-top:6px;line-height:1.4;text-transform:none;}
 
 /* ---- CASE STUDIES ---- */
@@ -121,7 +121,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
 .case dl{margin:0;}
 .case dt{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--slate-light);margin-bottom:6px;}
-.case dd{margin:0 0 20px;font-size:15px;line-height:1.66;color:var(--sapphire-soft);font-weight:300;}
+.case dd{margin:0 0 20px;font-size:15.5px;line-height:1.72;color:var(--sapphire-soft);font-weight:400;}
 .case dd:last-child{margin-bottom:0;}
 .case dd strong{font-weight:500;color:var(--sapphire);}
 .case .result{border-left:2px solid var(--sapphire);padding-left:18px;color:var(--sapphire);}
@@ -135,7 +135,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
   text-transform:uppercase;color:var(--slate-light);}
 .card h4{font-family:var(--display);font-weight:500;font-size:clamp(18px,1.9vw,22px);
   line-height:1.3;letter-spacing:-.01em;margin:10px 0 6px;}
-.card p{margin:0;font-size:14px;color:var(--slate);font-weight:300;line-height:1.58;}
+.card p{margin:0;font-size:14.5px;color:var(--slate);font-weight:400;line-height:1.6;}
 
 /* ---- GRID PANELS ---- */
 .recog{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -145,13 +145,23 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
   text-transform:uppercase;color:var(--slate-light);display:block;margin-bottom:10px;}
 .recog-grid .what{font-family:var(--display);font-size:18px;font-weight:500;
   line-height:1.28;letter-spacing:-.01em;display:block;}
-.recog-grid .sub{display:block;margin-top:7px;font-size:13px;color:var(--slate);font-weight:300;line-height:1.5;}
+.recog-grid .sub{display:block;margin-top:8px;font-size:13.5px;color:var(--slate);font-weight:400;line-height:1.58;}
 
 /* ---- ARIA ---- */
 .aria .badge{display:inline-block;font-family:var(--mono);font-size:10.5px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
   border:1px solid var(--accent);padding:5px 11px;border-radius:2px;margin-bottom:14px;}
-.aria p{margin:0;font-size:16px;font-weight:300;line-height:1.66;color:var(--sapphire-soft);max-width:60ch;}
+.aria p{margin:0;font-size:16px;font-weight:400;line-height:1.7;color:var(--sapphire-soft);max-width:60ch;}
+
+/* ---- VIDEO ---- */
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);
+  border-radius:3px;overflow:hidden;background:linear-gradient(150deg,#E8EDF3,#CFD8E3);}
+.video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:16px;color:var(--slate);}
+.video-ph .play{width:62px;height:62px;border-radius:50%;background:var(--sapphire);
+  color:var(--alabaster);display:flex;align-items:center;justify-content:center;padding-left:4px;}
+.video-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;}
 
 /* ---- CONTACT ---- */
 .contact{background:var(--sapphire);color:var(--alabaster);}
@@ -160,7 +170,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
 .contact h2{font-family:var(--display);font-weight:400;font-size:clamp(29px,4.6vw,52px);
   line-height:1.1;letter-spacing:-.025em;margin:16px 0 0;max-width:18ch;color:var(--alabaster);}
 .contact h2 em{font-style:italic;}
-.contact p{max-width:48ch;color:#CBD5E1;font-weight:300;font-size:16px;margin:20px 0 0;}
+.contact p{max-width:48ch;color:#DDE4EC;font-weight:400;font-size:16.5px;margin:20px 0 0;line-height:1.68;}
 .contact .btn-primary{background:var(--alabaster);color:var(--sapphire);border-color:var(--alabaster);margin-top:30px;}
 .contact .btn-primary:hover{background:transparent;color:var(--alabaster);}
 .contact-links{display:flex;flex-wrap:wrap;gap:11px 30px;margin-top:36px;padding-top:24px;
@@ -220,6 +230,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#about">Track Record</a>
       <a href="#work">Selected Work</a>
+      <a href="#video">Intro</a>
       <a href="#services">Services</a>
       <span class="nav-div" aria-hidden="true"></span>
       <span class="social">
@@ -273,7 +284,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
     <!-- HERO IMAGE SLOT — replace the .ph div with: <img src="portrait.jpg" alt="Shama Keskar"> -->
     <div class="portrait">
       <div class="frame">
-        <div class="ph">Hero portrait<br>4:5 ratio<br>1200&times;1500px</div>
+        <img src="portrait.jpg" alt="Shama Keskar">
       </div>
     </div>
   </div>
@@ -376,7 +387,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
   <div class="wrap">
     <p class="eyebrow">Selected work</p>
     <h2>Production AI and infrastructure scale.</h2>
-    <p class="rv" style="max-width:60ch;margin:-20px 0 36px;font-size:16px;font-weight:300;line-height:1.68;color:var(--sapphire-soft)">
+    <p class="rv" style="max-width:60ch;margin:-20px 0 36px;font-size:16px;font-weight:400;line-height:1.72;color:var(--sapphire-soft)">
       The through line across every project below is a <strong style="font-weight:500;color:var(--sapphire)">generator, verifier, and repair loop that emits a reliability signal</strong> — the difference between a prototype that demos well and a system an enterprise puts in front of customers.
     </p>
 
@@ -466,6 +477,27 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
         </dl>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="section" id="video" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Introduction</p>
+    <h2>Ninety seconds on how I work.</h2>
+    <div class="video-frame rv">
+      <!-- REPLACE with your embed once the video is up. Examples:
+           YouTube:  <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Introduction" allowfullscreen></iframe>
+           Vimeo:    <iframe src="https://player.vimeo.com/video/VIDEO_ID" title="Introduction" allowfullscreen></iframe>
+           Self-host:<video src="intro.mp4" poster="portrait.jpg" controls playsinline></video>
+      -->
+      <div class="video-ph">
+        <span class="play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="video-label">Intro video &middot; 16:9 &middot; drop your embed here</span>
+      </div>
     </div>
   </div>
 </section>
