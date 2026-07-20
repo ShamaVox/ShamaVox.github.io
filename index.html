@@ -393,25 +393,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.5vw,40px);
 
     <div class="cases">
 
-      <article class="case rv">
-        <div>
-          <span class="org">SlideLang</span>
-          <h3>Deck-as-code with a deterministic compile pipeline</h3>
-          <a href="https://aifund-slidelang.vercel.app/" target="_blank" rel="noopener" class="live">View live &rarr;</a>
-        </div>
-        <dl>
-          <dt>Context</dt>
-          <dd>AI-generated presentations look impressive until the model regenerates and destroys the edits a human made. Users stop trusting the tool the first time it eats their work.</dd>
-          <dt>Architecture</dt>
-          <dd>Presentations written in a <strong>Zod-typed DSL</strong> and compiled deterministically — normalize, validate, repair, score. Repair runs at two levels: spec-level splitting of overflowing content before render, and runtime self-healing via browser <strong>ResizeObserver</strong> after paint. A <strong>three-way merge keyed on stable node IDs</strong> ensures model regeneration never clobbers hand-edits.</dd>
-          <dt>Result</dt>
-          <dd class="result">Every deck emits a <strong>render-reliability score</strong> — failures become measurable rather than anecdotal, and the system can be gated on a number instead of a vibe.</dd>
-          <dt>Stack</dt>
-          <dd>Python, Next.js 14, TypeScript, Zod, Zustand, multi-provider image generation, prompt caching for token cost control on iterative runs.</dd>
-        </dl>
-      </article>
-
-      <article class="case rv">
+            <article class="case rv">
         <div>
           <span class="org">AI-native retail platform</span>
           <h3>Multi-agent enterprise document intelligence</h3>
