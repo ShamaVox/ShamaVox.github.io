@@ -1,710 +1,694 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shama Keskar — Fractional CTO for production AI</title>
+<meta name="description" content="I build the part of AI that has to be right. Architecture audits, hands-on build sprints, and fractional CTO work for seed to Series B teams shipping AI to paying customers.">
+<meta name="theme-color" content="#F7F9F7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F9F7;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F2;
+  --line:#E1E8E3;
+  --line-hi:#C6D3CB;
+  --ink:#11241D;
+  --ink-2:#455A52;
+  --ink-3:#6B7F76;
+  --accent:#1B6B4F;
+  --accent-soft:#EAF3EE;
+
+  --display:'Inter Tight','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,'Helvetica Neue',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+
+  --gut:clamp(22px,5vw,64px);
+  --max:1120px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:15.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--accent);color:#FFFFFF;}
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin:0;}
+
+h2{font-family:var(--display);font-weight:500;
+  font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.028em;
+  margin:16px 0 0;max-width:20ch;color:var(--ink);}
+.lede{max-width:60ch;margin:22px 0 0;font-size:16.5px;line-height:1.75;color:var(--ink-2);font-weight:400;}
+.lede + .lede{margin-top:16px;}
+
+.section{padding:clamp(72px,10vh,120px) 0;}
+.section.tight{padding-top:0;}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;
+  background:rgba(247,249,247,.82);backdrop-filter:blur(16px) saturate(150%);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
+.nav.scrolled{border-bottom-color:var(--line);background:rgba(247,249,247,.96);}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.logo{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;white-space:nowrap;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:26px;}
+.nav-links a{font-size:13.5px;color:var(--ink-2);transition:color .2s;font-weight:400;}
+.nav-links a:hover{color:var(--ink);}
+.nav-div{width:1px;height:14px;background:var(--line-hi);}
+.social{display:flex;align-items:center;gap:14px;}
+.social a{display:inline-flex;color:var(--ink-3);transition:color .2s;}
+.social a:hover{color:var(--accent);}
+.nav-cta{font-family:var(--body);font-size:13px;font-weight:500;color:#FFFFFF;background:var(--accent);
+  padding:9px 17px;border-radius:6px;transition:background .2s,transform .2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--ink);transform:translateY(-1px);}
+.nav-toggle{display:none;background:none;border:0;padding:6px;cursor:pointer;color:var(--ink);}
+
+/* ---------- HERO ---------- */
+.hero{padding:clamp(128px,20vh,190px) 0 clamp(52px,8vh,80px);position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:900px;height:620px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(27,107,79,.055),transparent 66%);}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.75fr);
+  gap:clamp(32px,6vw,80px);align-items:center;position:relative;}
+.hero h1{font-family:var(--display);font-weight:500;
+  font-size:clamp(38px,5.6vw,68px);line-height:1.02;letter-spacing:-.038em;
+  margin:20px 0 0;color:var(--ink);max-width:15ch;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero-sub{max-width:52ch;font-size:17px;color:var(--ink-2);font-weight:400;
+  margin:24px 0 0;line-height:1.72;}
+.hero-sub + .hero-sub{margin-top:15px;}
+.hero-sub strong{color:var(--ink);font-weight:500;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:34px;}
+.btn{font-size:13.5px;font-weight:500;padding:12px 22px;border-radius:6px;
+  transition:all .22s;display:inline-block;letter-spacing:-.005em;}
+.btn-primary{background:var(--accent);color:#FFFFFF;border:1px solid var(--accent);}
+.btn-primary:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px);}
+.btn-ghost{border:1px solid var(--line-hi);color:var(--ink-2);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+.portrait{position:relative;}
+.portrait .frame{aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:10px;
+  border:1px solid var(--line-hi);background:var(--surface);}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;
+  filter:saturate(.95) contrast(1.02);}
+
+/* ---------- METRICS ---------- */
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}
+.metrics-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);
+  display:grid;grid-template-columns:repeat(4,1fr);}
+.metric{padding:40px 26px;border-left:1px solid var(--line);}
+.metric:first-child{border-left:0;padding-left:0;}
+.metric:last-child{padding-right:0;}
+.metric .fig{font-family:var(--display);font-weight:600;font-size:clamp(38px,5vw,62px);
+  line-height:.94;letter-spacing:-.045em;display:block;color:var(--accent);}
+.metric .lbl{display:block;margin-top:16px;font-size:14.5px;font-weight:600;
+  color:var(--ink);letter-spacing:-.01em;}
+.metric .note{display:block;margin-top:7px;font-size:13px;color:var(--ink-2);
+  font-weight:400;line-height:1.55;}
+
+/* ---------- GRID PANELS ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:34px;}
+.grid2 > div{background:var(--surface);padding:28px 26px;transition:background .25s;}
+.grid2 > div:hover{background:var(--accent-soft);}
+.grid2 .h{font-size:15.5px;font-weight:500;margin:0 0 8px;color:var(--ink);
+  display:flex;align-items:center;gap:9px;}
+.grid2 .h::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none;}
+.grid2 .d{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.66;font-weight:400;}
+
+/* ---------- FIT ---------- */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}
+.fit > div{border:1px solid var(--line);border-radius:10px;padding:26px 24px;background:var(--surface);}
+.fit .yes{background:var(--accent-soft);border-color:#CFE3D8;}
+.fit .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  display:block;margin-bottom:16px;}
+.fit .yes .tag{color:var(--accent);}
+.fit .no .tag{color:var(--ink-3);}
+.fit ul{list-style:none;padding:0;margin:0;}
+.fit li{font-size:14.5px;color:var(--ink-2);line-height:1.6;padding:7px 0 7px 20px;
+  position:relative;font-weight:400;}
+.fit .yes li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--accent);}
+.fit .no li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink-3);}
+
+/* ---------- OFFERS ---------- */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px;}
+.offer{border:1px solid var(--line);border-radius:10px;background:var(--surface);
+  padding:28px 24px 26px;display:flex;flex-direction:column;
+  transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;}
+.offer:hover{border-color:var(--accent);background:var(--surface);transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(17,36,29,.07);}
+.offer .idx{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);}
+.offer h3{font-family:var(--display);font-weight:500;font-size:23px;line-height:1.15;
+  letter-spacing:-.028em;margin:14px 0 0;color:var(--ink);}
+.offer .meta{font-size:13px;color:var(--ink-3);margin:8px 0 0;font-weight:400;}
+.offer .for{font-size:14.5px;color:var(--ink-2);margin:18px 0 0;line-height:1.65;font-weight:400;}
+.offer ul{list-style:none;padding:18px 0 0;margin:20px 0 0;border-top:1px solid var(--line);}
+.offer li{font-size:13.8px;color:var(--ink-2);line-height:1.58;padding:6px 0 6px 18px;
+  position:relative;font-weight:400;}
+.offer li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:1px;
+  background:var(--accent);opacity:.7;}
+.offer .out{margin-top:auto;padding-top:20px;font-size:13.5px;color:var(--ink-2);
+  line-height:1.6;font-weight:400;}
+.offer .out b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:7px;}
+
+/* ---------- STACK ---------- */
+.stack{margin-top:34px;}
+.stack-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 12px;}
+.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+.chip{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.02em;
+  border:1px solid var(--line);background:var(--surface);border-radius:5px;
+  padding:8px 12px;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+
+/* ---------- RECORD ---------- */
+.record{border-top:1px solid var(--line);margin-top:34px;}
+.rec{display:grid;grid-template-columns:minmax(0,145px) minmax(0,1fr) minmax(0,210px);
+  gap:clamp(14px,3vw,36px);padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+.rec .co{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;}
+.rec .txt{margin:0;font-size:15px;line-height:1.66;color:var(--ink-2);font-weight:400;}
+.rec .txt strong{font-weight:500;color:var(--ink);}
+.rec .num{font-family:var(--display);font-size:clamp(20px,2.2vw,27px);font-weight:500;
+  letter-spacing:-.03em;line-height:1.12;text-align:right;color:var(--ink);}
+.rec .num small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;
+  letter-spacing:0;color:var(--ink-3);margin-top:6px;line-height:1.45;}
+
+/* ---------- CASES ---------- */
+.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.7fr);
+  gap:clamp(16px,5vw,56px);padding:34px 0;border-top:1px solid var(--line);}
+.cases .case:last-child{border-bottom:1px solid var(--line);}
+.case .org{font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3);}
+.case h3{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.1vw,25px);
+  line-height:1.18;letter-spacing:-.028em;margin:12px 0 0;color:var(--ink);}
+.case dl{margin:0;}
+.case dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:18px;}
+.case dt:first-child{margin-top:0;}
+.case dd{margin:7px 0 0;font-size:14.8px;line-height:1.68;color:var(--ink-2);font-weight:400;}
+.case dd strong{font-weight:500;color:var(--ink);}
+.case dd.result{color:var(--ink);}
+.case dd.result strong{color:var(--accent);font-weight:600;}
+
+/* ---------- WRITING ---------- */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}
+.card{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:26px 24px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;display:block;}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(17,36,29,.07);}
+.card .meta{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);}
+.card h4{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.28;
+  letter-spacing:-.022em;margin:13px 0 0;color:var(--ink);}
+.card p{margin:9px 0 0;font-size:14.5px;color:var(--ink-2);font-weight:400;line-height:1.6;}
+
+/* ---------- CONTACT ---------- */
+.contact{border-top:1px solid var(--line);background:var(--surface);position:relative;overflow:hidden;}
+.contact::before{content:"";position:absolute;bottom:-60%;left:50%;transform:translateX(-50%);
+  width:820px;height:560px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(27,107,79,.07),transparent 68%);}
+.contact .wrap{padding:clamp(76px,11vh,128px) var(--gut);position:relative;}
+.contact h2{font-size:clamp(30px,4.4vw,52px);max-width:16ch;letter-spacing:-.035em;}
+.contact h2 em{font-style:normal;color:var(--accent);}
+.contact p{max-width:50ch;color:var(--ink-2);font-weight:400;font-size:17px;
+  margin:22px 0 0;line-height:1.72;}
+.contact .btn-primary{margin-top:32px;padding:14px 26px;font-size:14px;}
+.contact-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:26px;
+  border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);}
+.contact-links a{transition:color .2s;}
+.contact-links a:hover{color:var(--accent);}
+.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:26px 0;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(14px);
+  transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);}
+.rv.in{opacity:1;transform:none;}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .portrait{max-width:340px;}
+  .offers{grid-template-columns:1fr;}
+  .rec{grid-template-columns:minmax(0,125px) minmax(0,1fr);}
+  .rec .num{grid-column:1/-1;text-align:left;margin-top:6px;}
+  .rec .num small{display:inline;margin-left:9px;}
+}
+@media(max-width:860px){
+  .metrics-in{grid-template-columns:1fr 1fr;}
+  .metric{padding:30px 18px;border-top:1px solid var(--line);}
+  .metric:nth-child(1),.metric:nth-child(2){border-top:0;}
+  .metric:nth-child(odd){border-left:0;padding-left:0;}
+  .metric:nth-child(even){padding-right:0;}
+  .grid2,.fit,.dual{grid-template-columns:1fr;}
+  .case{grid-template-columns:1fr;gap:16px;}
+}
+@media(max-width:760px){
+  .nav-links{display:none;}
+  .nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+    position:absolute;top:64px;left:0;right:0;background:var(--paper);
+    padding:22px var(--gut) 26px;border-bottom:1px solid var(--line);}
+  .nav-links.open .nav-div{width:100%;height:1px;}
+  .nav-toggle{display:block;}
+  .btn{flex:1 1 100%;text-align:center;}
+  .rec{grid-template-columns:1fr;gap:6px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
+  .rv{opacity:1;transform:none;} html{scroll-behavior:auto;}
+}
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
-<p class="p1">&lt;title&gt;Shama Keskar — Fractional CTO for production AI&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="description" content="I build the part of AI that has to be right. Architecture audits, hands-on build sprints, and fractional CTO work for seed to Series B teams shipping AI to paying customers."&gt;</p>
-<p class="p1">&lt;meta name="theme-color" content="#F7F9F7"&gt;</p>
-<p class="p1">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1">&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">:root{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--paper:#F7F9F7;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--surface:#FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--surface-2:#F1F5F2;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--line:#E1E8E3;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--line-hi:#C6D3CB;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--ink:#11241D;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--ink-2:#455A52;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--ink-3:#6B7F76;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent:#1B6B4F;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent-soft:#EAF3EE;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>--display:'Inter Tight','Inter',-apple-system,sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--body:'Inter',-apple-system,'Helvetica Neue',sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--mono:'JetBrains Mono',ui-monospace,monospace;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>--gut:clamp(22px,5vw,64px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--max:1120px;</p>
-<p class="p1">}</p>
-<p class="p1">*{box-sizing:border-box;}</p>
-<p class="p1">html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}</p>
-<p class="p1">body{margin:0;background:var(--paper);color:var(--ink);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-family:var(--body);font-size:15.5px;line-height:1.62;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}</p>
-<p class="p1">a{color:inherit;text-decoration:none;}</p>
-<p class="p1">::selection{background:var(--accent);color:#FFFFFF;}</p>
-<p class="p1">:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px;}</p>
-<p class="p1">.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);}</p>
-<p class="p2"><br></p>
-<p class="p1">.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--accent);font-weight:500;margin:0;}</p>
-<p class="p2"><br></p>
-<p class="p1">h2{font-family:var(--display);font-weight:500;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.028em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:16px 0 0;max-width:20ch;color:var(--ink);}</p>
-<p class="p1">.lede{max-width:60ch;margin:22px 0 0;font-size:16.5px;line-height:1.75;color:var(--ink-2);font-weight:400;}</p>
-<p class="p1">.lede + .lede{margin-top:16px;}</p>
-<p class="p2"><br></p>
-<p class="p1">.section{padding:clamp(72px,10vh,120px) 0;}</p>
-<p class="p1">.section.tight{padding-top:0;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- NAV ---------- */</p>
-<p class="p1">.nav{position:fixed;top:0;left:0;right:0;z-index:80;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(247,249,247,.82);backdrop-filter:blur(16px) saturate(150%);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}</p>
-<p class="p1">.nav.scrolled{border-bottom-color:var(--line);background:rgba(247,249,247,.96);}</p>
-<p class="p1">.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);height:64px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;justify-content:space-between;gap:18px;}</p>
-<p class="p1">.logo{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;white-space:nowrap;}</p>
-<p class="p1">.logo span{color:var(--accent);}</p>
-<p class="p1">.nav-links{display:flex;align-items:center;gap:26px;}</p>
-<p class="p1">.nav-links a{font-size:13.5px;color:var(--ink-2);transition:color .2s;font-weight:400;}</p>
-<p class="p1">.nav-links a:hover{color:var(--ink);}</p>
-<p class="p1">.nav-div{width:1px;height:14px;background:var(--line-hi);}</p>
-<p class="p1">.social{display:flex;align-items:center;gap:14px;}</p>
-<p class="p1">.social a{display:inline-flex;color:var(--ink-3);transition:color .2s;}</p>
-<p class="p1">.social a:hover{color:var(--accent);}</p>
-<p class="p1">.nav-cta{font-family:var(--body);font-size:13px;font-weight:500;color:#FFFFFF;background:var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:9px 17px;border-radius:6px;transition:background .2s,transform .2s;white-space:nowrap;}</p>
-<p class="p1">.nav-cta:hover{background:var(--ink);transform:translateY(-1px);}</p>
-<p class="p1">.nav-toggle{display:none;background:none;border:0;padding:6px;cursor:pointer;color:var(--ink);}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- HERO ---------- */</p>
-<p class="p1">.hero{padding:clamp(128px,20vh,190px) 0 clamp(52px,8vh,80px);position:relative;overflow:hidden;}</p>
-<p class="p1">.hero::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:900px;height:620px;pointer-events:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(ellipse at center,rgba(27,107,79,.055),transparent 66%);}</p>
-<p class="p1">.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.75fr);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap:clamp(32px,6vw,80px);align-items:center;position:relative;}</p>
-<p class="p1">.hero h1{font-family:var(--display);font-weight:500;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(38px,5.6vw,68px);line-height:1.02;letter-spacing:-.038em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:20px 0 0;color:var(--ink);max-width:15ch;}</p>
-<p class="p1">.hero h1 em{font-style:normal;color:var(--accent);}</p>
-<p class="p1">.hero-sub{max-width:52ch;font-size:17px;color:var(--ink-2);font-weight:400;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:24px 0 0;line-height:1.72;}</p>
-<p class="p1">.hero-sub + .hero-sub{margin-top:15px;}</p>
-<p class="p1">.hero-sub strong{color:var(--ink);font-weight:500;}</p>
-<p class="p1">.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:34px;}</p>
-<p class="p1">.btn{font-size:13.5px;font-weight:500;padding:12px 22px;border-radius:6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition:all .22s;display:inline-block;letter-spacing:-.005em;}</p>
-<p class="p1">.btn-primary{background:var(--accent);color:#FFFFFF;border:1px solid var(--accent);}</p>
-<p class="p1">.btn-primary:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px);}</p>
-<p class="p1">.btn-ghost{border:1px solid var(--line-hi);color:var(--ink-2);}</p>
-<p class="p1">.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}</p>
-<p class="p2"><br></p>
-<p class="p1">.portrait{position:relative;}</p>
-<p class="p1">.portrait .frame{aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--line-hi);background:var(--surface);}</p>
-<p class="p1">.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>filter:saturate(.95) contrast(1.02);}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- METRICS ---------- */</p>
-<p class="p1">.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}</p>
-<p class="p1">.metrics-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:grid;grid-template-columns:repeat(4,1fr);}</p>
-<p class="p1">.metric{padding:40px 26px;border-left:1px solid var(--line);}</p>
-<p class="p1">.metric:first-child{border-left:0;padding-left:0;}</p>
-<p class="p1">.metric:last-child{padding-right:0;}</p>
-<p class="p1">.metric .fig{font-family:var(--display);font-weight:600;font-size:clamp(38px,5vw,62px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>line-height:.94;letter-spacing:-.045em;display:block;color:var(--accent);}</p>
-<p class="p1">.metric .lbl{display:block;margin-top:16px;font-size:14.5px;font-weight:600;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink);letter-spacing:-.01em;}</p>
-<p class="p1">.metric .note{display:block;margin-top:7px;font-size:13px;color:var(--ink-2);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight:400;line-height:1.55;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- GRID PANELS ---------- */</p>
-<p class="p1">.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:34px;}</p>
-<p class="p1">.grid2 &gt; div{background:var(--surface);padding:28px 26px;transition:background .25s;}</p>
-<p class="p1">.grid2 &gt; div:hover{background:var(--accent-soft);}</p>
-<p class="p1">.grid2 .h{font-size:15.5px;font-weight:500;margin:0 0 8px;color:var(--ink);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;gap:9px;}</p>
-<p class="p1">.grid2 .h::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none;}</p>
-<p class="p1">.grid2 .d{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.66;font-weight:400;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- FIT ---------- */</p>
-<p class="p1">.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}</p>
-<p class="p1">.fit &gt; div{border:1px solid var(--line);border-radius:10px;padding:26px 24px;background:var(--surface);}</p>
-<p class="p1">.fit .yes{background:var(--accent-soft);border-color:#CFE3D8;}</p>
-<p class="p1">.fit .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:block;margin-bottom:16px;}</p>
-<p class="p1">.fit .yes .tag{color:var(--accent);}</p>
-<p class="p1">.fit .no .tag{color:var(--ink-3);}</p>
-<p class="p1">.fit ul{list-style:none;padding:0;margin:0;}</p>
-<p class="p1">.fit li{font-size:14.5px;color:var(--ink-2);line-height:1.6;padding:7px 0 7px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position:relative;font-weight:400;}</p>
-<p class="p1">.fit .yes li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--accent);}</p>
-<p class="p1">.fit .no li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink-3);}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- OFFERS ---------- */</p>
-<p class="p1">.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px;}</p>
-<p class="p1">.offer{border:1px solid var(--line);border-radius:10px;background:var(--surface);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:28px 24px 26px;display:flex;flex-direction:column;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;}</p>
-<p class="p1">.offer:hover{border-color:var(--accent);background:var(--surface);transform:translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 8px 28px rgba(17,36,29,.07);}</p>
-<p class="p1">.offer .idx{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--accent);}</p>
-<p class="p1">.offer h3{font-family:var(--display);font-weight:500;font-size:23px;line-height:1.15;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:-.028em;margin:14px 0 0;color:var(--ink);}</p>
-<p class="p1">.offer .meta{font-size:13px;color:var(--ink-3);margin:8px 0 0;font-weight:400;}</p>
-<p class="p1">.offer .for{font-size:14.5px;color:var(--ink-2);margin:18px 0 0;line-height:1.65;font-weight:400;}</p>
-<p class="p1">.offer ul{list-style:none;padding:18px 0 0;margin:20px 0 0;border-top:1px solid var(--line);}</p>
-<p class="p1">.offer li{font-size:13.8px;color:var(--ink-2);line-height:1.58;padding:6px 0 6px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position:relative;font-weight:400;}</p>
-<p class="p1">.offer li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:1px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:var(--accent);opacity:.7;}</p>
-<p class="p1">.offer .out{margin-top:auto;padding-top:20px;font-size:13.5px;color:var(--ink-2);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.6;font-weight:400;}</p>
-<p class="p1">.offer .out b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:7px;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- STACK ---------- */</p>
-<p class="p1">.stack{margin-top:34px;}</p>
-<p class="p1">.stack-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink-3);margin:0 0 12px;}</p>
-<p class="p1">.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}</p>
-<p class="p1">.chip{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.02em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--line);background:var(--surface);border-radius:5px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:8px 12px;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;}</p>
-<p class="p1">.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- RECORD ---------- */</p>
-<p class="p1">.record{border-top:1px solid var(--line);margin-top:34px;}</p>
-<p class="p1">.rec{display:grid;grid-template-columns:minmax(0,145px) minmax(0,1fr) minmax(0,210px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap:clamp(14px,3vw,36px);padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;}</p>
-<p class="p1">.rec .co{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--accent);font-weight:500;}</p>
-<p class="p1">.rec .txt{margin:0;font-size:15px;line-height:1.66;color:var(--ink-2);font-weight:400;}</p>
-<p class="p1">.rec .txt strong{font-weight:500;color:var(--ink);}</p>
-<p class="p1">.rec .num{font-family:var(--display);font-size:clamp(20px,2.2vw,27px);font-weight:500;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:-.03em;line-height:1.12;text-align:right;color:var(--ink);}</p>
-<p class="p1">.rec .num small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:0;color:var(--ink-3);margin-top:6px;line-height:1.45;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- CASES ---------- */</p>
-<p class="p1">.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.7fr);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap:clamp(16px,5vw,56px);padding:34px 0;border-top:1px solid var(--line);}</p>
-<p class="p1">.cases .case:last-child{border-bottom:1px solid var(--line);}</p>
-<p class="p1">.case .org{font-family:var(--mono);font-size:10px;letter-spacing:.15em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;color:var(--ink-3);}</p>
-<p class="p1">.case h3{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.1vw,25px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.18;letter-spacing:-.028em;margin:12px 0 0;color:var(--ink);}</p>
-<p class="p1">.case dl{margin:0;}</p>
-<p class="p1">.case dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink-3);margin-top:18px;}</p>
-<p class="p1">.case dt:first-child{margin-top:0;}</p>
-<p class="p1">.case dd{margin:7px 0 0;font-size:14.8px;line-height:1.68;color:var(--ink-2);font-weight:400;}</p>
-<p class="p1">.case dd strong{font-weight:500;color:var(--ink);}</p>
-<p class="p1">.case dd.result{color:var(--ink);}</p>
-<p class="p1">.case dd.result strong{color:var(--accent);font-weight:600;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- WRITING ---------- */</p>
-<p class="p1">.dual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}</p>
-<p class="p1">.card{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:26px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition:border-color .25s,transform .25s,box-shadow .25s;display:block;}</p>
-<p class="p1">.card:hover{border-color:var(--accent);transform:translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 8px 28px rgba(17,36,29,.07);}</p>
-<p class="p1">.card .meta{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink-3);}</p>
-<p class="p1">.card h4{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.28;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:-.022em;margin:13px 0 0;color:var(--ink);}</p>
-<p class="p1">.card p{margin:9px 0 0;font-size:14.5px;color:var(--ink-2);font-weight:400;line-height:1.6;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- CONTACT ---------- */</p>
-<p class="p1">.contact{border-top:1px solid var(--line);background:var(--surface);position:relative;overflow:hidden;}</p>
-<p class="p1">.contact::before{content:"";position:absolute;bottom:-60%;left:50%;transform:translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:820px;height:560px;pointer-events:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(ellipse at center,rgba(27,107,79,.07),transparent 68%);}</p>
-<p class="p1">.contact .wrap{padding:clamp(76px,11vh,128px) var(--gut);position:relative;}</p>
-<p class="p1">.contact h2{font-size:clamp(30px,4.4vw,52px);max-width:16ch;letter-spacing:-.035em;}</p>
-<p class="p1">.contact h2 em{font-style:normal;color:var(--accent);}</p>
-<p class="p1">.contact p{max-width:50ch;color:var(--ink-2);font-weight:400;font-size:17px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:22px 0 0;line-height:1.72;}</p>
-<p class="p1">.contact .btn-primary{margin-top:32px;padding:14px 26px;font-size:14px;}</p>
-<p class="p1">.contact-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:26px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);}</p>
-<p class="p1">.contact-links a{transition:color .2s;}</p>
-<p class="p1">.contact-links a:hover{color:var(--accent);}</p>
-<p class="p1">.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:26px 0;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- REVEAL ---------- */</p>
-<p class="p1">.rv{opacity:0;transform:translateY(14px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);}</p>
-<p class="p1">.rv.in{opacity:1;transform:none;}</p>
-<p class="p2"><br></p>
-<p class="p1">/* ---------- RESPONSIVE ---------- */</p>
-<p class="p1">@media(max-width:980px){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-grid{grid-template-columns:1fr;gap:36px;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.portrait{max-width:340px;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.offers{grid-template-columns:1fr;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.rec{grid-template-columns:minmax(0,125px) minmax(0,1fr);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.rec .num{grid-column:1/-1;text-align:left;margin-top:6px;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.rec .num small{display:inline;margin-left:9px;}</p>
-<p class="p1">}</p>
-<p class="p1">@media(max-width:860px){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.metrics-in{grid-template-columns:1fr 1fr;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.metric{padding:30px 18px;border-top:1px solid var(--line);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.metric:nth-child(1),.metric:nth-child(2){border-top:0;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.metric:nth-child(odd){border-left:0;padding-left:0;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.metric:nth-child(even){padding-right:0;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.grid2,.fit,.dual{grid-template-columns:1fr;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.case{grid-template-columns:1fr;gap:16px;}</p>
-<p class="p1">}</p>
-<p class="p1">@media(max-width:760px){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links{display:none;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position:absolute;top:64px;left:0;right:0;background:var(--paper);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding:22px var(--gut) 26px;border-bottom:1px solid var(--line);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-links.open .nav-div{width:100%;height:1px;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-toggle{display:block;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn{flex:1 1 100%;text-align:center;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.rec{grid-template-columns:1fr;gap:6px;}</p>
-<p class="p1">}</p>
-<p class="p1">@media(prefers-reduced-motion:reduce){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.rv{opacity:1;transform:none;} html{scroll-behavior:auto;}</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;header class="nav" id="nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#top" class="logo"&gt;Shama Keskar&lt;span&gt;.&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="nav-links" id="navLinks" aria-label="Main"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#services"&gt;Services&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#work"&gt;Work&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#stack"&gt;Stack&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#about"&gt;Track record&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="nav-div" aria-hidden="true"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="social"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://github.com/ShamaVox" target="_blank" rel="noopener" aria-label="GitHub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"&gt;&lt;path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"&gt;&lt;path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://substack.com/" target="_blank" rel="noopener" aria-label="Substack"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"&gt;&lt;path d="M22.54 8.52H1.46V5.4h21.08zM1.46 11.1h21.08V24l-10.54-5.9L1.46 24zM22.54 0H1.46v3.12h21.08z"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"&gt;&lt;path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.03 4.13H5.06z"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://calendly.com/shama-keskar/30min" class="nav-cta" target="_blank" rel="noopener"&gt;Book a call&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"&gt;&lt;path d="M3 6h18M3 12h18M3 18h18"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;main id="top"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap hero-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="eyebrow"&gt;Fractional CTO &amp;nbsp;/&amp;nbsp; Production AI &amp;nbsp;/&amp;nbsp; Seattle&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;I build the part of AI that has to be &lt;em&gt;right&lt;/em&gt;.&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-sub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Getting a model to produce something is easy. Knowing whether it was right, and catching it</p>
-<p class="p1"><span class="Apple-converted-space">        </span>when it wasn't, is the whole job. That is the part I work on.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-sub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>You work with me. No account manager, no team of contractors I hand you off to.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;strong&gt;Three-time founding CTO.&lt;/strong&gt; Before that I ran engineering at Google, LinkedIn,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>and Amazon. I still write the code.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-actions"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#services" class="btn btn-primary"&gt;What I do&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://calendly.com/shama-keskar/30min" class="btn btn-ghost" target="_blank" rel="noopener"&gt;Book a call&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="portrait"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="frame"&gt;&lt;img src="portrait.jpg" alt="Shama Keskar"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="metrics" aria-label="At a glance"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="metrics-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="metric rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="fig"&gt;96%&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="lbl"&gt;Production AI accuracy&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="note"&gt;On messy unstructured data, live with paying customers&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="metric rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="fig"&gt;10&amp;times;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="lbl"&gt;Faster API response&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="note"&gt;30 seconds down to 3, on a system already in production&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="metric rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="fig"&gt;60%&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="lbl"&gt;Fewer production incidents&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="note"&gt;Caught before customers found them, not after&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="metric rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="fig"&gt;10 hrs&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="lbl"&gt;Back per engineer, per week&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="note"&gt;Build and test pipeline rebuilt at Amazon&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section" id="why"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Why teams call me&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Every AI project I have watched fail, failed the same way.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>The demo worked. Everyone was happy. Then real data showed up, or a real customer did,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>and the thing that looked finished turned out to be about 40% of the work.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>The missing 60% is almost always the same. Nothing checks whether the model was right.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>The model decides when it is done. Retries run until the bill arrives. And when something</p>
-<p class="p1"><span class="Apple-converted-space">      </span>breaks, nobody can reconstruct what happened.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>I have built that layer four times. I would rather help you build it before the rewrite than after.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight" id="direct"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Working with one person&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Why this beats hiring an agency.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid2 rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="h"&gt;You get the senior person&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="d"&gt;There is nobody between us. Whoever reviews your architecture is the same person who writes the fix.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="h"&gt;One decision maker, so it moves&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="d"&gt;No scoping meetings with a delivery lead. No change orders. You tell me what changed and we change it.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="h"&gt;I have shipped this before&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="d"&gt;Three founding CTO seats and twenty years of production systems. I know which shortcuts cost you later because I have taken most of them.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="h"&gt;I will tell you when the answer is no&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="d"&gt;An agency is paid to find you more work. I would rather keep the relationship than sell you a project you do not need.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fit rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="yes"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;Good fit&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Seed through Series B&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;You have engineers, or are about to hire the first ones&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;You are putting AI in front of paying customers&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Something about that is keeping you up and you cannot name it yet&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;You want someone who will disagree with you&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="no"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;Not a fit&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;You need a team of five to build an app&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;You want a deck, not a system&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;The decision is made and you want it validated&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Staff augmentation by the hour&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight" id="services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Three ways to work together&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Pick by how much of me you need.&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="offers"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="offer rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="idx"&gt;01 &amp;nbsp;/&amp;nbsp; One to two weeks&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Audit&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="meta"&gt;Fixed scope. Written findings.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="for"&gt;You have something built, or half built, and you are about to put it in front of customers.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;I read the code and the architecture, not the deck&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Where the model is making decisions your code should be making&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;What happens on retry, and what it costs when the loop does not stop&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Whether you can reconstruct, afterward, why it did what it did&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Which parts of this you should not be using AI for at all&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;What your team is missing and who to hire for it&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="out"&gt;&lt;b&gt;You get&lt;/b&gt;A written list of what will break, ranked by what it costs when it does. Sometimes the answer is that it is fine. I will say that too.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="offer rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="idx"&gt;02 &amp;nbsp;/&amp;nbsp; Two to six weeks, full time&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Build sprint&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="meta"&gt;Hands on the keyboard, in your repo.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="for"&gt;Your model works most of the time. Most of the time is not a product you can charge for.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Typed schemas and deterministic validation at the boundary&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Bounded retry, so a bad output fails once instead of forever&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Confidence scoring with a threshold you can actually tune&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Escalation to a human that resolves in seconds, not minutes&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Tracing, so you can see which node burned the tokens&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Corrections logged as training data instead of tickets&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="out"&gt;&lt;b&gt;You get&lt;/b&gt;Working code your engineers can extend. This is the work that took my last document pipeline to 96% in production.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="offer rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="idx"&gt;03 &amp;nbsp;/&amp;nbsp; Ongoing, one to two days a week&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Fractional CTO&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="meta"&gt;Roadmap, team, and board.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="for"&gt;You need someone senior on the technical side and cannot justify a full-time executive yet.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Own the roadmap and the tradeoffs that come with it&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;What to build, what to buy, and what to stop&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Hire the team and raise the bar on the one you have&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Sit in the board conversation and the customer conversation&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Diligence prep, because investors will ask how it works&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Write code on the hard parts, not just review it&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="out"&gt;&lt;b&gt;You get&lt;/b&gt;Engineering that ships on a schedule, and people who can keep doing it after I leave.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv" style="margin-top:30px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Scope depends on what you are actually dealing with, so I work that out on a call rather than</p>
-<p class="p1"><span class="Apple-converted-space">      </span>guessing at it here. If what you need is not one of these, I will say so and point you at</p>
-<p class="p1"><span class="Apple-converted-space">      </span>someone better suited.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight" id="stack"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;What I build with&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;The tools I use most weeks.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv"&gt;Not a list of everything I have touched. These are the ones I am currently fast in.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="stack rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="stack-lbl"&gt;Agents and models&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stack-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Claude API&lt;/span&gt;&lt;span class="chip"&gt;Tool use&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Multi-agent orchestration&lt;/span&gt;&lt;span class="chip"&gt;Structured extraction&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Retrieval and context design&lt;/span&gt;&lt;span class="chip"&gt;Evals&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Tracing&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="stack-lbl"&gt;Backend&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stack-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Python&lt;/span&gt;&lt;span class="chip"&gt;FastAPI&lt;/span&gt;&lt;span class="chip"&gt;Pydantic&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;TypeScript&lt;/span&gt;&lt;span class="chip"&gt;Node&lt;/span&gt;&lt;span class="chip"&gt;Zod&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="stack-lbl"&gt;Data and infrastructure&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stack-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;PostgreSQL&lt;/span&gt;&lt;span class="chip"&gt;Redis&lt;/span&gt;&lt;span class="chip"&gt;DynamoDB&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;AWS&lt;/span&gt;&lt;span class="chip"&gt;Vector stores&lt;/span&gt;&lt;span class="chip"&gt;Event pipelines&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="stack-lbl"&gt;Frontend and integrations&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stack-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Next.js&lt;/span&gt;&lt;span class="chip"&gt;React&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip"&gt;Shopify APIs&lt;/span&gt;&lt;span class="chip"&gt;Stripe&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight" id="about"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Track record&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Twenty years in the room when the technical call had money behind it.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="record"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rec rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="co"&gt;Google&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="txt"&gt;Owned quality for the ads infrastructure across &lt;strong&gt;search, TV, and radio&lt;/strong&gt;. It was the revenue engine, so nothing shipped broken.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="num"&gt;~98%&lt;small&gt;of company revenue on the surface I covered&lt;/small&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rec rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="co"&gt;LinkedIn&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="txt"&gt;Led the &lt;strong&gt;relaunch of the mobile app&lt;/strong&gt;. Shipped in three months and grew the team from 4 to 40.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="num"&gt;3 months&lt;small&gt;concept to shipped&lt;/small&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rec rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="co"&gt;Amazon&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="txt"&gt;Owned quality, security, and release velocity for the Alexa skills catalog while it grew &lt;strong&gt;five times over&lt;/strong&gt;.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="num"&gt;20K &amp;rarr; 100K+&lt;small&gt;skills across 250M+ devices&lt;/small&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rec rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="co"&gt;Amazon&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="txt"&gt;Launched &lt;strong&gt;physical retail technology&lt;/strong&gt;. Grocery and fashion stores, point of sale, electronic shelf labels, the whole hardware and software stack.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="num"&gt;4 &amp;rarr; 50+&lt;small&gt;engineers hired, built, retained&lt;/small&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rec rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="co"&gt;Founding CTO &amp;times;3&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="txt"&gt;Built three companies from zero in &lt;strong&gt;edge AI, accessibility, and AI-native retail&lt;/strong&gt;. Reported to CEOs, boards, and investors the whole way.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="num"&gt;$20K &amp;rarr; $3.5M&lt;small&gt;MRR to ARR on the platform I built&lt;/small&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight" id="work"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Selected work&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Same pattern in all of them.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="lede rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Something generates, something else checks it, and there is a defined path for when the check</p>
-<p class="p1"><span class="Apple-converted-space">      </span>fails. That is what separates a system a company will run from one that only demos well.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cases" style="margin-top:34px"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;article class="case rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="org"&gt;AI-native retail platform&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Multi-agent document intelligence&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Context&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Retailers were losing thousands of hours to manual data entry from vendor documents. Usually right is not a standard you can run a business on.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Architecture&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Multi-agent extraction turning messy vendor documents into typed, validated records. &lt;strong&gt;Confidence scoring&lt;/strong&gt; on every field, &lt;strong&gt;bounded retry&lt;/strong&gt; instead of open-ended loops, and escalation to a human when the score drops. When it fails it fails into a known state rather than a plausible wrong one.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Result&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd class="result"&gt;&lt;strong&gt;96% extraction accuracy&lt;/strong&gt; in production with live paying merchants. Built a custom onboarding path around a platform certification bottleneck so sales did not stall.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Stack&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Claude API, multi-agent orchestration, confidence scoring, human review tooling, commerce platform integration.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;article class="case rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="org"&gt;Nickelytics&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Edge AI telemetry for autonomous assets&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Context&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Turning moving vehicles into measurable advertising inventory. That needs real attribution, not an estimate someone can argue with.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Architecture&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Built real-time location tracking, &lt;strong&gt;edge attribution telemetry&lt;/strong&gt;, and computer vision running on the vehicle. Wrote the software foundations from nothing and built the team to run them.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Result&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd class="result"&gt;Scaled recurring revenue from &lt;strong&gt;$20K MRR to $3.5M ARR&lt;/strong&gt;, owning product, delivery, infrastructure cost, and the org through the whole climb.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Stack&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Edge computer vision, real-time geospatial tracking, attribution pipeline, cloud infrastructure engineered for sublinear cost scaling.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;article class="case rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="org"&gt;SignAI&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Real-time multimodal translation&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Context&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Sign language interpretation is a latency problem dressed up as a translation problem. An interpreter that lags is not an interpreter.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Architecture&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Bidirectional real-time ASL and English interpretation using gesture and pose modeling, low-latency inference, and edge optimization on commodity hardware.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Result&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd class="result"&gt;Delivered a &lt;strong&gt;working real-time bidirectional prototype&lt;/strong&gt; on commodity hardware and ran technical validation demos for &lt;strong&gt;Microsoft&lt;/strong&gt;. Handed the platform off as a Deaf-led initiative. Accessibility work belongs with the community it serves.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Stack&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Computer vision, gesture and pose modeling, low-latency inference, bidirectional translation pipeline.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;article class="case rv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="org"&gt;BrainEx &amp;middot; Side project&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Confidential support for students in India&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Context&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;Students in India face significant mental health pressure and very little confidential support. The barrier is rarely willingness to seek help. It is the fear that seeking it will be visible to family, faculty, or peers.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Architecture&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd&gt;A privacy-first data architecture where confidentiality is a system property rather than a policy document. Strict access controls, data minimisation, and audit logging on every sensitive read.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dt&gt;Result&lt;/dt&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;dd class="result"&gt;A support workflow students could actually use, with the privacy guarantees &lt;strong&gt;enforced in the architecture&lt;/strong&gt; rather than promised on a terms page.&lt;/dd&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/dl&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section tight"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Writing&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Working notes from production systems.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dual"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="card rv" href="#"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="meta"&gt;Substack / Architecture&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Designing a four-layer fallback pipeline for agentic workflows&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;What to build for the path after the model is wrong.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="card rv" href="#"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="meta"&gt;Essay&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Quality is an operational standard, not a development tax&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The case against treating reliability as what you do after the feature works.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="contact" id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="eyebrow"&gt;Contact&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Talk to me &lt;em&gt;before&lt;/em&gt; the rebuild.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Thirty minutes, no deck. Tell me what you are building and what is worrying you about it. If I can help I will say how. If I cannot I will say that.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://calendly.com/shama-keskar/30min" class="btn btn-primary" target="_blank" rel="noopener"&gt;Book a 30-minute call&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="contact-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:shama.keskar@gmail.com"&gt;shama.keskar@gmail.com&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://github.com/ShamaVox" target="_blank" rel="noopener"&gt;GitHub&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.linkedin.com/" target="_blank" rel="noopener"&gt;LinkedIn&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://substack.com/" target="_blank" rel="noopener"&gt;Substack&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;&lt;div class="wrap"&gt;&lt;div class="foot"&gt;&lt;span&gt;&amp;copy; 2026 Shama Keskar&lt;/span&gt;&lt;span&gt;Seattle, Washington&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">(function(){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var nav=document.getElementById('nav');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var s=function(){nav.classList.toggle('scrolled',window.scrollY&gt;10);};</p>
-<p class="p1"><span class="Apple-converted-space">  </span>s();window.addEventListener('scroll',s,{passive:true});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>t.addEventListener('click',function(){var o=l.classList.toggle('open');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>t.setAttribute('aria-expanded',String(o));t.setAttribute('aria-label',o?'Close menu':'Open menu');});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>t.setAttribute('aria-expanded','false');}});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var i=document.querySelectorAll('.rv');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if('IntersectionObserver' in window){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var io=new IntersectionObserver(function(es){es.forEach(function(e){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{threshold:.08,rootMargin:'0px 0px -6% 0px'});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>i.forEach(function(x){io.observe(x);});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}else{i.forEach(function(x){x.classList.add('in');});}</p>
-<p class="p1">})();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="logo">Shama Keskar<span>.</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">Track record</a>
+      <span class="nav-div" aria-hidden="true"></span>
+      <span class="social">
+        <a href="https://github.com/ShamaVox" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://substack.com/" target="_blank" rel="noopener" aria-label="Substack">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M22.54 8.52H1.46V5.4h21.08zM1.46 11.1h21.08V24l-10.54-5.9L1.46 24zM22.54 0H1.46v3.12h21.08z"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.03 4.13H5.06z"/></svg>
+        </a>
+      </span>
+    </nav>
+    <a href="https://calendly.com/shama-keskar/30min" class="nav-cta" target="_blank" rel="noopener">Book a call</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Fractional CTO &nbsp;/&nbsp; Production AI &nbsp;/&nbsp; Seattle</p>
+      <h1>I build the part of AI that has to be <em>right</em>.</h1>
+      <p class="hero-sub">
+        Getting a model to produce something is easy. Knowing whether it was right, and catching it
+        when it wasn't, is the whole job. That is the part I work on.
+      </p>
+      <p class="hero-sub">
+        You work with me. No account manager, no team of contractors I hand you off to.
+        <strong>Three-time founding CTO.</strong> Before that I ran engineering at Google, LinkedIn,
+        and Amazon. I still write the code.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">What I do</a>
+        <a href="https://calendly.com/shama-keskar/30min" class="btn btn-ghost" target="_blank" rel="noopener">Book a call</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="frame"><img src="portrait.jpg" alt="Shama Keskar"></div>
+    </div>
+  </div>
+</section>
+
+<section class="metrics" aria-label="At a glance">
+  <div class="metrics-in">
+    <div class="metric rv">
+      <span class="fig">96%</span>
+      <span class="lbl">Production AI accuracy</span>
+      <span class="note">On messy unstructured data, live with paying customers</span>
+    </div>
+    <div class="metric rv">
+      <span class="fig">10&times;</span>
+      <span class="lbl">Faster API response</span>
+      <span class="note">30 seconds down to 3, on a system already in production</span>
+    </div>
+    <div class="metric rv">
+      <span class="fig">60%</span>
+      <span class="lbl">Fewer production incidents</span>
+      <span class="note">Caught before customers found them, not after</span>
+    </div>
+    <div class="metric rv">
+      <span class="fig">10 hrs</span>
+      <span class="lbl">Back per engineer, per week</span>
+      <span class="note">Build and test pipeline rebuilt at Amazon</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <p class="eyebrow">Why teams call me</p>
+    <h2>Every AI project I have watched fail, failed the same way.</h2>
+    <p class="lede rv">
+      The demo worked. Everyone was happy. Then real data showed up, or a real customer did,
+      and the thing that looked finished turned out to be about 40% of the work.
+    </p>
+    <p class="lede rv">
+      The missing 60% is almost always the same. Nothing checks whether the model was right.
+      The model decides when it is done. Retries run until the bill arrives. And when something
+      breaks, nobody can reconstruct what happened.
+    </p>
+    <p class="lede rv">
+      I have built that layer four times. I would rather help you build it before the rewrite than after.
+    </p>
+  </div>
+</section>
+
+<section class="section tight" id="direct">
+  <div class="wrap">
+    <p class="eyebrow">Working with one person</p>
+    <h2>Why this beats hiring an agency.</h2>
+    <div class="grid2 rv">
+      <div>
+        <p class="h">You get the senior person</p>
+        <p class="d">There is nobody between us. Whoever reviews your architecture is the same person who writes the fix.</p>
+      </div>
+      <div>
+        <p class="h">One decision maker, so it moves</p>
+        <p class="d">No scoping meetings with a delivery lead. No change orders. You tell me what changed and we change it.</p>
+      </div>
+      <div>
+        <p class="h">I have shipped this before</p>
+        <p class="d">Three founding CTO seats and twenty years of production systems. I know which shortcuts cost you later because I have taken most of them.</p>
+      </div>
+      <div>
+        <p class="h">I will tell you when the answer is no</p>
+        <p class="d">An agency is paid to find you more work. I would rather keep the relationship than sell you a project you do not need.</p>
+      </div>
+    </div>
+
+    <div class="fit rv">
+      <div class="yes">
+        <span class="tag">Good fit</span>
+        <ul>
+          <li>Seed through Series B</li>
+          <li>You have engineers, or are about to hire the first ones</li>
+          <li>You are putting AI in front of paying customers</li>
+          <li>Something about that is keeping you up and you cannot name it yet</li>
+          <li>You want someone who will disagree with you</li>
+        </ul>
+      </div>
+      <div class="no">
+        <span class="tag">Not a fit</span>
+        <ul>
+          <li>You need a team of five to build an app</li>
+          <li>You want a deck, not a system</li>
+          <li>The decision is made and you want it validated</li>
+          <li>Staff augmentation by the hour</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" id="services">
+  <div class="wrap">
+    <p class="eyebrow">Three ways to work together</p>
+    <h2>Pick by how much of me you need.</h2>
+
+    <div class="offers">
+      <div class="offer rv">
+        <span class="idx">01 &nbsp;/&nbsp; One to two weeks</span>
+        <h3>Audit</h3>
+        <p class="meta">Fixed scope. Written findings.</p>
+        <p class="for">You have something built, or half built, and you are about to put it in front of customers.</p>
+        <ul>
+          <li>I read the code and the architecture, not the deck</li>
+          <li>Where the model is making decisions your code should be making</li>
+          <li>What happens on retry, and what it costs when the loop does not stop</li>
+          <li>Whether you can reconstruct, afterward, why it did what it did</li>
+          <li>Which parts of this you should not be using AI for at all</li>
+          <li>What your team is missing and who to hire for it</li>
+        </ul>
+        <p class="out"><b>You get</b>A written list of what will break, ranked by what it costs when it does. Sometimes the answer is that it is fine. I will say that too.</p>
+      </div>
+
+      <div class="offer rv">
+        <span class="idx">02 &nbsp;/&nbsp; Two to six weeks, full time</span>
+        <h3>Build sprint</h3>
+        <p class="meta">Hands on the keyboard, in your repo.</p>
+        <p class="for">Your model works most of the time. Most of the time is not a product you can charge for.</p>
+        <ul>
+          <li>Typed schemas and deterministic validation at the boundary</li>
+          <li>Bounded retry, so a bad output fails once instead of forever</li>
+          <li>Confidence scoring with a threshold you can actually tune</li>
+          <li>Escalation to a human that resolves in seconds, not minutes</li>
+          <li>Tracing, so you can see which node burned the tokens</li>
+          <li>Corrections logged as training data instead of tickets</li>
+        </ul>
+        <p class="out"><b>You get</b>Working code your engineers can extend. This is the work that took my last document pipeline to 96% in production.</p>
+      </div>
+
+      <div class="offer rv">
+        <span class="idx">03 &nbsp;/&nbsp; Ongoing, one to two days a week</span>
+        <h3>Fractional CTO</h3>
+        <p class="meta">Roadmap, team, and board.</p>
+        <p class="for">You need someone senior on the technical side and cannot justify a full-time executive yet.</p>
+        <ul>
+          <li>Own the roadmap and the tradeoffs that come with it</li>
+          <li>What to build, what to buy, and what to stop</li>
+          <li>Hire the team and raise the bar on the one you have</li>
+          <li>Sit in the board conversation and the customer conversation</li>
+          <li>Diligence prep, because investors will ask how it works</li>
+          <li>Write code on the hard parts, not just review it</li>
+        </ul>
+        <p class="out"><b>You get</b>Engineering that ships on a schedule, and people who can keep doing it after I leave.</p>
+      </div>
+    </div>
+
+    <p class="lede rv" style="margin-top:30px">
+      Scope depends on what you are actually dealing with, so I work that out on a call rather than
+      guessing at it here. If what you need is not one of these, I will say so and point you at
+      someone better suited.
+    </p>
+  </div>
+</section>
+
+<section class="section tight" id="stack">
+  <div class="wrap">
+    <p class="eyebrow">What I build with</p>
+    <h2>The tools I use most weeks.</h2>
+    <p class="lede rv">Not a list of everything I have touched. These are the ones I am currently fast in.</p>
+
+    <div class="stack rv">
+      <p class="stack-lbl">Agents and models</p>
+      <div class="stack-row">
+        <span class="chip">Claude API</span><span class="chip">Tool use</span>
+        <span class="chip">Multi-agent orchestration</span><span class="chip">Structured extraction</span>
+        <span class="chip">Retrieval and context design</span><span class="chip">Evals</span>
+        <span class="chip">Tracing</span>
+      </div>
+      <p class="stack-lbl">Backend</p>
+      <div class="stack-row">
+        <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Pydantic</span>
+        <span class="chip">TypeScript</span><span class="chip">Node</span><span class="chip">Zod</span>
+      </div>
+      <p class="stack-lbl">Data and infrastructure</p>
+      <div class="stack-row">
+        <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">DynamoDB</span>
+        <span class="chip">AWS</span><span class="chip">Vector stores</span><span class="chip">Event pipelines</span>
+      </div>
+      <p class="stack-lbl">Frontend and integrations</p>
+      <div class="stack-row">
+        <span class="chip">Next.js</span><span class="chip">React</span>
+        <span class="chip">Shopify APIs</span><span class="chip">Stripe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" id="about">
+  <div class="wrap">
+    <p class="eyebrow">Track record</p>
+    <h2>Twenty years in the room when the technical call had money behind it.</h2>
+    <div class="record">
+      <div class="rec rv">
+        <span class="co">Google</span>
+        <p class="txt">Owned quality for the ads infrastructure across <strong>search, TV, and radio</strong>. It was the revenue engine, so nothing shipped broken.</p>
+        <span class="num">~98%<small>of company revenue on the surface I covered</small></span>
+      </div>
+      <div class="rec rv">
+        <span class="co">LinkedIn</span>
+        <p class="txt">Led the <strong>relaunch of the mobile app</strong>. Shipped in three months and grew the team from 4 to 40.</p>
+        <span class="num">3 months<small>concept to shipped</small></span>
+      </div>
+      <div class="rec rv">
+        <span class="co">Amazon</span>
+        <p class="txt">Owned quality, security, and release velocity for the Alexa skills catalog while it grew <strong>five times over</strong>.</p>
+        <span class="num">20K &rarr; 100K+<small>skills across 250M+ devices</small></span>
+      </div>
+      <div class="rec rv">
+        <span class="co">Amazon</span>
+        <p class="txt">Launched <strong>physical retail technology</strong>. Grocery and fashion stores, point of sale, electronic shelf labels, the whole hardware and software stack.</p>
+        <span class="num">4 &rarr; 50+<small>engineers hired, built, retained</small></span>
+      </div>
+      <div class="rec rv">
+        <span class="co">Founding CTO &times;3</span>
+        <p class="txt">Built three companies from zero in <strong>edge AI, accessibility, and AI-native retail</strong>. Reported to CEOs, boards, and investors the whole way.</p>
+        <span class="num">$20K &rarr; $3.5M<small>MRR to ARR on the platform I built</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Same pattern in all of them.</h2>
+    <p class="lede rv">
+      Something generates, something else checks it, and there is a defined path for when the check
+      fails. That is what separates a system a company will run from one that only demos well.
+    </p>
+
+    <div class="cases" style="margin-top:34px">
+
+      <article class="case rv">
+        <div>
+          <span class="org">AI-native retail platform</span>
+          <h3>Multi-agent document intelligence</h3>
+        </div>
+        <dl>
+          <dt>Context</dt>
+          <dd>Retailers were losing thousands of hours to manual data entry from vendor documents. Usually right is not a standard you can run a business on.</dd>
+          <dt>Architecture</dt>
+          <dd>Multi-agent extraction turning messy vendor documents into typed, validated records. <strong>Confidence scoring</strong> on every field, <strong>bounded retry</strong> instead of open-ended loops, and escalation to a human when the score drops. When it fails it fails into a known state rather than a plausible wrong one.</dd>
+          <dt>Result</dt>
+          <dd class="result"><strong>96% extraction accuracy</strong> in production with live paying merchants. Built a custom onboarding path around a platform certification bottleneck so sales did not stall.</dd>
+          <dt>Stack</dt>
+          <dd>Claude API, multi-agent orchestration, confidence scoring, human review tooling, commerce platform integration.</dd>
+        </dl>
+      </article>
+
+      <article class="case rv">
+        <div>
+          <span class="org">Nickelytics</span>
+          <h3>Edge AI telemetry for autonomous assets</h3>
+        </div>
+        <dl>
+          <dt>Context</dt>
+          <dd>Turning moving vehicles into measurable advertising inventory. That needs real attribution, not an estimate someone can argue with.</dd>
+          <dt>Architecture</dt>
+          <dd>Built real-time location tracking, <strong>edge attribution telemetry</strong>, and computer vision running on the vehicle. Wrote the software foundations from nothing and built the team to run them.</dd>
+          <dt>Result</dt>
+          <dd class="result">Scaled recurring revenue from <strong>$20K MRR to $3.5M ARR</strong>, owning product, delivery, infrastructure cost, and the org through the whole climb.</dd>
+          <dt>Stack</dt>
+          <dd>Edge computer vision, real-time geospatial tracking, attribution pipeline, cloud infrastructure engineered for sublinear cost scaling.</dd>
+        </dl>
+      </article>
+
+      <article class="case rv">
+        <div>
+          <span class="org">SignAI</span>
+          <h3>Real-time multimodal translation</h3>
+        </div>
+        <dl>
+          <dt>Context</dt>
+          <dd>Sign language interpretation is a latency problem dressed up as a translation problem. An interpreter that lags is not an interpreter.</dd>
+          <dt>Architecture</dt>
+          <dd>Bidirectional real-time ASL and English interpretation using gesture and pose modeling, low-latency inference, and edge optimization on commodity hardware.</dd>
+          <dt>Result</dt>
+          <dd class="result">Delivered a <strong>working real-time bidirectional prototype</strong> on commodity hardware and ran technical validation demos for <strong>Microsoft</strong>. Handed the platform off as a Deaf-led initiative. Accessibility work belongs with the community it serves.</dd>
+          <dt>Stack</dt>
+          <dd>Computer vision, gesture and pose modeling, low-latency inference, bidirectional translation pipeline.</dd>
+        </dl>
+      </article>
+
+      <article class="case rv">
+        <div>
+          <span class="org">BrainEx &middot; Side project</span>
+          <h3>Confidential support for students in India</h3>
+        </div>
+        <dl>
+          <dt>Context</dt>
+          <dd>Students in India face significant mental health pressure and very little confidential support. The barrier is rarely willingness to seek help. It is the fear that seeking it will be visible to family, faculty, or peers.</dd>
+          <dt>Architecture</dt>
+          <dd>A privacy-first data architecture where confidentiality is a system property rather than a policy document. Strict access controls, data minimisation, and audit logging on every sensitive read.</dd>
+          <dt>Result</dt>
+          <dd class="result">A support workflow students could actually use, with the privacy guarantees <strong>enforced in the architecture</strong> rather than promised on a terms page.</dd>
+        </dl>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <p class="eyebrow">Writing</p>
+    <h2>Working notes from production systems.</h2>
+    <div class="dual">
+      <a class="card rv" href="#">
+        <span class="meta">Substack / Architecture</span>
+        <h4>Designing a four-layer fallback pipeline for agentic workflows</h4>
+        <p>What to build for the path after the model is wrong.</p>
+      </a>
+      <a class="card rv" href="#">
+        <span class="meta">Essay</span>
+        <h4>Quality is an operational standard, not a development tax</h4>
+        <p>The case against treating reliability as what you do after the feature works.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Talk to me <em>before</em> the rebuild.</h2>
+    <p>Thirty minutes, no deck. Tell me what you are building and what is worrying you about it. If I can help I will say how. If I cannot I will say that.</p>
+    <a href="https://calendly.com/shama-keskar/30min" class="btn btn-primary" target="_blank" rel="noopener">Book a 30-minute call</a>
+    <div class="contact-links">
+      <a href="mailto:shama.keskar@gmail.com">shama.keskar@gmail.com</a>
+      <a href="https://github.com/ShamaVox" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/" target="_blank" rel="noopener">Substack</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><div class="foot"><span>&copy; 2026 Shama Keskar</span><span>Seattle, Washington</span></div></div></footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var s=function(){nav.classList.toggle('scrolled',window.scrollY>10);};
+  s();window.addEventListener('scroll',s,{passive:true});
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',String(o));t.setAttribute('aria-label',o?'Close menu':'Open menu');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');
+    t.setAttribute('aria-expanded','false');}});
+  var i=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},
+      {threshold:.08,rootMargin:'0px 0px -6% 0px'});
+    i.forEach(function(x){io.observe(x);});
+  }else{i.forEach(function(x){x.classList.add('in');});}
+})();
+</script>
 </body>
 </html>
