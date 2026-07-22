@@ -173,9 +173,17 @@ section{padding:clamp(76px,11vh,132px) 0;}
   .job{grid-template-columns:1fr;gap:16px;}
   .job .metric{text-align:left;}
 }
-.earlier{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);
-  font-size:15px;color:var(--ink-2);line-height:1.7;max-width:64ch;}
-.earlier b{color:var(--ink);font-weight:600;}
+.prior{margin-top:40px;padding-top:30px;border-top:1px solid var(--line);}
+.prior .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 20px;}
+.prior-row{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);
+  gap:clamp(12px,3vw,32px);padding:16px 0;border-top:1px solid var(--line);align-items:baseline;}
+.prior-row:first-of-type{border-top:0;}
+.prior-row .co{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:500;}
+.prior-row p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;}
+.prior-row p a{color:var(--accent);border-bottom:1px solid var(--line-2);padding-bottom:1px;}
+.prior-row p a:hover{border-color:var(--accent);}
+@media(max-width:640px){.prior-row{grid-template-columns:1fr;gap:5px;}}
 
 /* ---------- SKILLS ---------- */
 .skills{margin-top:40px;}
@@ -380,7 +388,7 @@ footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <div>
           <span class="role">Founding CTO &middot; AI-native retail</span>
           <h3>Multi-agent document intelligence, trusted in production</h3>
-          <p>Built a platform that turns messy vendor documents into structured, verified records &mdash; confidence scoring on every field, bounded retries, and human review only where it earns its place. Live with paying merchants.</p>
+          <p>Built a platform that turns messy vendor documents into structured, verified records &mdash; confidence scoring on every field, bounded retries, and human review only where it earns its place. Live with paying merchants. <a href="https://www.linkedin.com/posts/shamakeskar_the-gauntlet-what-it-really-takes-to-build-activity-7467651867981037568-yVeO" target="_blank" rel="noopener">What it took to build &rarr;</a></p>
         </div>
         <div class="metric"><span class="big">96%</span><span class="cap">extraction accuracy in production</span></div>
       </article>
@@ -404,15 +412,29 @@ footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       </article>
     </div>
 
-    <p class="earlier rv">
-      Before founding: <b>Sr. Director of Engineering at Aspiration</b>, where I launched a
-      carbon-neutral credit card and was recognised as a tech innovator in the
-      <a href="REPLACE_WITH_LA_BULLETIN_URL" target="_blank" rel="noopener">LA Bulletin</a>
-      &mdash; approval rates 15% to 32%, latency 30s to 3s, incidents down 60%. And a decade of
-      quality and platform leadership at <b>Amazon</b> (Alexa Skills, 20K to 100K+ across 250M+
-      devices; Amazon&rsquo;s first physical stores), <b>LinkedIn</b> (mobile relaunch in three
-      months), and <b>Google</b> (quality for the ads revenue engine).
-    </p>
+    <div class="prior rv">
+      <p class="lbl">Corporate &amp; growth-stage leadership</p>
+
+      <div class="prior-row">
+        <span class="co">Aspiration</span>
+        <p>Launched a carbon-neutral credit card and was named a tech innovator in <a href="https://www.builtinla.com/articles/tech-innovators-shaping-their-future-industries" target="_blank" rel="noopener">Built In LA</a>. Approval rates 15% to 32%, latency 30s to 3s, incidents down 60%.</p>
+      </div>
+
+      <div class="prior-row">
+        <span class="co">Amazon</span>
+        <p>Quality and platform leadership across Alexa Skills (20K to 100K+ across 250M+ devices) and Amazon&rsquo;s first physical stores &mdash; <a href="https://www.aboutamazon.com/news/retail/introducing-the-first-amazon-fresh-grocery-store" target="_blank" rel="noopener">grocery</a> and <a href="https://www.retaildive.com/news/amazon-to-open-first-physical-clothing-store/617416/" target="_blank" rel="noopener">fashion</a>.</p>
+      </div>
+
+      <div class="prior-row">
+        <span class="co">LinkedIn</span>
+        <p>Relaunched the mobile app in three months and grew the team from 4 to 40.</p>
+      </div>
+
+      <div class="prior-row">
+        <span class="co">Google</span>
+        <p>Owned quality for the ads revenue engine across search, TV, and radio.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -471,7 +493,7 @@ footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <span class="n">Step 02</span>
         <h4>Send context first</h4>
         <p>A short form about what you are building and where it hurts. Five minutes, and we skip straight to the real problem.</p>
-        <a href="REPLACE_WITH_GOOGLE_FORM_URL" target="_blank" rel="noopener">Fill the form &rarr;</a>
+        <a href="https://forms.gle/xwi5YVgLyuTUszEX8" target="_blank" rel="noopener">Fill the form &rarr;</a>
       </div>
       <div class="step rv">
         <span class="n">Step 03</span>
@@ -482,7 +504,7 @@ footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 
     <div class="cta-row">
       <a href="https://calendly.com/shama-keskar/30min" class="btn btn-fill" target="_blank" rel="noopener">Book a discovery call</a>
-      <a href="REPLACE_WITH_GOOGLE_FORM_URL" class="btn btn-line" target="_blank" rel="noopener">Send project details</a>
+      <a href="https://forms.gle/xwi5YVgLyuTUszEX8" class="btn btn-line" target="_blank" rel="noopener">Send project details</a>
     </div>
 
     <div class="links">
