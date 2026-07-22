@@ -3,271 +3,233 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shama Keskar — Builder & Fractional CTO for production AI</title>
-<meta name="description" content="I build the part of AI that has to be right. Architecture audits, hands-on build sprints, and fractional CTO work for seed to Series B teams shipping AI to paying customers.">
-<meta name="theme-color" content="#F7F9F7">
+<title>Shama Keskar — Fractional CTO for production AI</title>
+<meta name="description" content="Three-time founding CTO. I build and ship agentic AI from idea to production — accurate, reliable, and trusted at scale. Twenty years across Google, LinkedIn, and Amazon.">
+<meta name="theme-color" content="#FAFAF7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F7F9F7;
-  --surface:#FFFFFF;
-  --surface-2:#F1F5F2;
-  --line:#E1E8E3;
-  --line-hi:#C6D3CB;
-  --ink:#11241D;
-  --ink-2:#455A52;
-  --ink-3:#6B7F76;
-  --accent:#1B6B4F;
-  --accent-soft:#EAF3EE;
+  --paper:#FAFAF7;
+  --raise:#FFFFFF;
+  --sink:#F1F2ED;
+  --line:#E3E4DC;
+  --line-2:#CBCEC2;
+  --ink:#12241C;
+  --ink-2:#3C4A42;
+  --ink-3:#6A756D;
+  --accent:#127A54;
+  --accent-2:#2F9E6E;
+  --accent-wash:#E8F2EC;
 
-  --display:'Inter Tight','Inter',-apple-system,sans-serif;
+  --display:'Fraunces',Georgia,serif;
   --body:'Inter',-apple-system,'Helvetica Neue',sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
 
-  --gut:clamp(22px,5vw,64px);
-  --max:1120px;
+  --gut:clamp(24px,5vw,72px);
+  --max:1080px;
+  --shadow:0 1px 2px rgba(18,36,28,.04),0 10px 34px rgba(18,36,28,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0C1512;
+    --raise:#111E19;
+    --sink:#0F1A16;
+    --line:#20302A;
+    --line-2:#33473E;
+    --ink:#EAF0EC;
+    --ink-2:#B4C2BA;
+    --ink-3:#7D8C84;
+    --accent:#3FB57E;
+    --accent-2:#54C98F;
+    --accent-wash:#152A22;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 38px rgba(0,0,0,.32);
+  }
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--body);font-size:15.5px;line-height:1.62;
+  font-family:var(--body);font-size:16px;line-height:1.6;font-weight:400;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 a{color:inherit;text-decoration:none;}
-::selection{background:var(--accent);color:#FFFFFF;}
-:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px;}
+::selection{background:var(--accent-2);color:#06110C;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);}
 
-.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);font-weight:500;margin:0;}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0;font-weight:500;}
 
-h2{font-family:var(--display);font-weight:500;
-  font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.028em;
-  margin:16px 0 0;max-width:20ch;color:var(--ink);}
-.lede{max-width:60ch;margin:22px 0 0;font-size:16.5px;line-height:1.75;color:var(--ink-2);font-weight:400;}
-.lede + .lede{margin-top:16px;}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.6vw,44px);
+  line-height:1.06;letter-spacing:-.02em;margin:14px 0 0;color:var(--ink);max-width:19ch;}
+.lede{max-width:58ch;margin:20px 0 0;font-size:17px;line-height:1.68;color:var(--ink-2);}
 
-.section{padding:clamp(72px,10vh,120px) 0;}
-.section.tight{padding-top:0;}
+section{padding:clamp(76px,11vh,132px) 0;}
+.tight{padding-top:0;}
 
 /* ---------- NAV ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:80;
-  background:rgba(247,249,247,.82);backdrop-filter:blur(16px) saturate(150%);
+.nav{position:fixed;inset:0 0 auto 0;z-index:90;
+  background:color-mix(in srgb, var(--paper) 78%, transparent);
+  backdrop-filter:blur(18px) saturate(150%);
   border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
-.nav.scrolled{border-bottom-color:var(--line);background:rgba(247,249,247,.96);}
-.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);height:64px;
-  display:flex;align-items:center;justify-content:space-between;gap:18px;}
-.logo{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;white-space:nowrap;}
-.logo span{color:var(--accent);}
-.nav-links{display:flex;align-items:center;gap:26px;}
-.nav-links a{font-size:13.5px;color:var(--ink-2);transition:color .2s;font-weight:400;}
+.nav.on{border-bottom-color:var(--line);}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);height:66px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;white-space:nowrap;}
+.logo i{color:var(--accent);font-style:normal;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--ink-2);transition:color .18s;}
 .nav-links a:hover{color:var(--ink);}
-.nav-div{width:1px;height:14px;background:var(--line-hi);}
-.social{display:flex;align-items:center;gap:14px;}
-.social a{display:inline-flex;color:var(--ink-3);transition:color .2s;}
-.social a:hover{color:var(--accent);}
-.nav-cta{font-family:var(--body);font-size:13px;font-weight:500;color:#FFFFFF;background:var(--accent);
-  padding:9px 17px;border-radius:6px;transition:background .2s,transform .2s;white-space:nowrap;}
+.nav-cta{font-size:13.5px;font-weight:500;color:var(--paper);background:var(--accent);
+  padding:10px 18px;border-radius:8px;transition:background .18s,transform .18s;white-space:nowrap;}
 .nav-cta:hover{background:var(--ink);transform:translateY(-1px);}
-.nav-toggle{display:none;background:none;border:0;padding:6px;cursor:pointer;color:var(--ink);}
+.burger{display:none;background:none;border:0;padding:6px;color:var(--ink);cursor:pointer;}
 
 /* ---------- HERO ---------- */
-.hero{padding:clamp(128px,20vh,190px) 0 clamp(52px,8vh,80px);position:relative;overflow:hidden;}
-.hero::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);
-  width:900px;height:620px;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(27,107,79,.055),transparent 66%);}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.75fr);
-  gap:clamp(32px,6vw,80px);align-items:center;position:relative;}
+.hero{padding:calc(66px + clamp(48px,10vh,96px)) 0 clamp(40px,7vh,72px);position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(60% 50% at 22% 8%,var(--accent-wash),transparent 70%);opacity:.7;}
 .hero h1{font-family:var(--display);font-weight:500;
-  font-size:clamp(38px,5.6vw,68px);line-height:1.02;letter-spacing:-.038em;
-  margin:20px 0 0;color:var(--ink);max-width:15ch;}
-.hero h1 em{font-style:normal;color:var(--accent);}
-.hero-sub{max-width:52ch;font-size:17px;color:var(--ink-2);font-weight:400;
-  margin:24px 0 0;line-height:1.72;}
-.hero-sub + .hero-sub{margin-top:15px;}
-.hero-sub strong{color:var(--ink);font-weight:500;}
-.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:34px;}
-.btn{font-size:13.5px;font-weight:500;padding:12px 22px;border-radius:6px;
-  transition:all .22s;display:inline-block;letter-spacing:-.005em;}
-.btn-primary{background:var(--accent);color:#FFFFFF;border:1px solid var(--accent);}
-.btn-primary:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px);}
-.btn-ghost{border:1px solid var(--line-hi);color:var(--ink-2);}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  font-size:clamp(40px,6.4vw,76px);line-height:1;letter-spacing:-.03em;
+  margin:22px 0 0;color:var(--ink);max-width:16ch;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{max-width:50ch;font-size:18px;line-height:1.62;color:var(--ink-2);margin:26px 0 0;}
+.hero-sub b{color:var(--ink);font-weight:600;}
+.pedigree{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:28px 0 0;
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-3);}
+.pedigree b{color:var(--ink);font-weight:500;}
+.pedigree .dot{width:3px;height:3px;border-radius:50%;background:var(--line-2);}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;}
+.btn{font-size:14.5px;font-weight:500;padding:13px 24px;border-radius:9px;
+  transition:all .2s;display:inline-block;}
+.btn-fill{background:var(--accent);color:var(--paper);border:1px solid var(--accent);}
+.btn-fill:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px);}
+.btn-line{border:1px solid var(--line-2);color:var(--ink-2);}
+.btn-line:hover{border-color:var(--accent);color:var(--accent);}
 
-.portrait{position:relative;}
-.portrait .frame{aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:10px;
-  border:1px solid var(--line-hi);background:var(--surface);}
-.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;
-  filter:saturate(.95) contrast(1.02);}
-
-/* ---------- METRICS ---------- */
-.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}
-.metrics-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);
+/* ---------- PROOF STRIP ---------- */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.proof-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);
   display:grid;grid-template-columns:repeat(4,1fr);}
-.metric{padding:40px 26px;border-left:1px solid var(--line);}
-.metric:first-child{border-left:0;padding-left:0;}
-.metric:last-child{padding-right:0;}
-.metric .fig{font-family:var(--display);font-weight:600;font-size:clamp(38px,5vw,62px);
-  line-height:.94;letter-spacing:-.045em;display:block;color:var(--accent);}
-.metric .lbl{display:block;margin-top:16px;font-size:14.5px;font-weight:600;
-  color:var(--ink);letter-spacing:-.01em;}
-.metric .note{display:block;margin-top:7px;font-size:13px;color:var(--ink-2);
-  font-weight:400;line-height:1.55;}
+.stat{padding:clamp(28px,3.4vw,44px) clamp(14px,2vw,28px);border-left:1px solid var(--line);}
+.stat:first-child{border-left:0;padding-left:0;}
+.stat:last-child{padding-right:0;}
+.stat .n{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.4vw,52px);
+  line-height:.9;letter-spacing:-.03em;color:var(--accent);display:block;}
+.stat .k{display:block;margin-top:14px;font-size:14px;font-weight:600;color:var(--ink);}
+.stat .s{display:block;margin-top:5px;font-size:13px;color:var(--ink-3);line-height:1.5;}
 
-/* ---------- GRID PANELS ---------- */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:34px;}
-.grid2 > div{background:var(--surface);padding:28px 26px;transition:background .25s;}
-.grid2 > div:hover{background:var(--accent-soft);}
-.grid2 .h{font-size:15.5px;font-weight:500;margin:0 0 8px;color:var(--ink);
-  display:flex;align-items:center;gap:9px;}
-.grid2 .h::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none;}
-.grid2 .d{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.66;font-weight:400;}
+/* ---------- WHAT ---------- */
+.what{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:44px;}
+.what .row{padding:24px 0;border-top:1px solid var(--line);}
+.what .row:first-child,.what .row:nth-child(2){border-top:0;}
+.what .row h3{font-family:var(--display);font-size:21px;font-weight:500;letter-spacing:-.01em;
+  margin:0;color:var(--ink);}
+.what .row p{margin:9px 0 0;font-size:15.5px;color:var(--ink-2);line-height:1.62;}
+@media(max-width:720px){.what{grid-template-columns:1fr;}
+  .what .row:nth-child(2){border-top:1px solid var(--line);}}
 
-/* ---------- FIT ---------- */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}
-.fit > div{border:1px solid var(--line);border-radius:10px;padding:26px 24px;background:var(--surface);}
-.fit .yes{background:var(--accent-soft);border-color:#CFE3D8;}
-.fit .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  display:block;margin-bottom:16px;}
-.fit .yes .tag{color:var(--accent);}
-.fit .no .tag{color:var(--ink-3);}
-.fit ul{list-style:none;padding:0;margin:0;}
-.fit li{font-size:14.5px;color:var(--ink-2);line-height:1.6;padding:7px 0 7px 20px;
-  position:relative;font-weight:400;}
-.fit .yes li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--accent);}
-.fit .no li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink-3);}
+/* ---------- SERVICES ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+.card{background:var(--raise);border:1px solid var(--line);border-radius:14px;
+  padding:30px 26px 28px;display:flex;flex-direction:column;
+  transition:transform .22s,box-shadow .22s,border-color .22s;}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--line-2);}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.card h3{font-family:var(--display);font-size:25px;font-weight:500;letter-spacing:-.02em;
+  margin:14px 0 0;color:var(--ink);}
+.card .when{font-size:13.5px;color:var(--ink-3);margin:7px 0 0;}
+.card .for{font-size:15px;color:var(--ink-2);margin:18px 0 0;line-height:1.6;}
+.card ul{list-style:none;margin:20px 0 0;padding:20px 0 0;border-top:1px solid var(--line);}
+.card li{font-size:14px;color:var(--ink-2);line-height:1.55;padding:6px 0 6px 20px;position:relative;}
+.card li::before{content:"";position:absolute;left:0;top:13px;width:9px;height:1.5px;
+  background:var(--accent-2);border-radius:1px;}
+.card .go{margin-top:22px;font-size:13.5px;font-weight:500;color:var(--accent);align-self:flex-start;}
+.card .go:hover{color:var(--ink);}
+.card .out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:14px;color:var(--ink-2);line-height:1.58;}
+.card .out b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:6px;}
+.svc-note{margin-top:26px;font-size:15px;color:var(--ink-2);max-width:56ch;line-height:1.62;}
+@media(max-width:840px){.svc{grid-template-columns:1fr;}}
 
-/* ---------- OFFERS ---------- */
-.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px;}
-.offer{border:1px solid var(--line);border-radius:10px;background:var(--surface);
-  padding:28px 24px 26px;display:flex;flex-direction:column;
-  transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;}
-.offer:hover{border-color:var(--accent);background:var(--surface);transform:translateY(-3px);
-  box-shadow:0 8px 28px rgba(17,36,29,.07);}
-.offer .idx{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--accent);}
-.offer h3{font-family:var(--display);font-weight:500;font-size:23px;line-height:1.15;
-  letter-spacing:-.028em;margin:14px 0 0;color:var(--ink);}
-.offer .meta{font-size:13px;color:var(--ink-3);margin:8px 0 0;font-weight:400;}
-.offer .for{font-size:14.5px;color:var(--ink-2);margin:18px 0 0;line-height:1.65;font-weight:400;}
-.offer ul{list-style:none;padding:18px 0 0;margin:20px 0 0;border-top:1px solid var(--line);}
-.offer li{font-size:13.8px;color:var(--ink-2);line-height:1.58;padding:6px 0 6px 18px;
-  position:relative;font-weight:400;}
-.offer li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:1px;
-  background:var(--accent);opacity:.7;}
-.offer .out{margin-top:auto;padding-top:20px;font-size:13.5px;color:var(--ink-2);
-  line-height:1.6;font-weight:400;}
-.offer .out b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:7px;}
+/* ---------- WORK (the merged spine) ---------- */
+.work{margin-top:8px;}
+.job{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,220px);
+  gap:clamp(20px,5vw,60px);padding:clamp(30px,4vw,44px) 0;
+  border-top:1px solid var(--line);align-items:start;}
+.work .job:last-child{border-bottom:1px solid var(--line);}
+.job .role{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.job h3{font-family:var(--display);font-size:clamp(22px,2.6vw,29px);font-weight:500;
+  letter-spacing:-.02em;line-height:1.12;margin:12px 0 0;color:var(--ink);max-width:24ch;}
+.job p{margin:14px 0 0;font-size:15.5px;color:var(--ink-2);line-height:1.66;max-width:56ch;}
+.job p a{color:var(--accent);border-bottom:1px solid var(--line-2);padding-bottom:1px;}
+.job p a:hover{border-color:var(--accent);}
+.job .metric{text-align:right;}
+.job .metric .big{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,44px);
+  line-height:.95;letter-spacing:-.03em;color:var(--accent);}
+.job .metric .cap{display:block;margin-top:9px;font-size:13px;color:var(--ink-3);line-height:1.5;}
+@media(max-width:720px){
+  .job{grid-template-columns:1fr;gap:16px;}
+  .job .metric{text-align:left;}
+}
+.earlier{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:15px;color:var(--ink-2);line-height:1.7;max-width:64ch;}
+.earlier b{color:var(--ink);font-weight:600;}
 
-/* ---------- STACK ---------- */
-.stack{margin-top:34px;}
-.stack-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+/* ---------- SKILLS ---------- */
+.skills{margin-top:40px;}
+.skill-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink-3);margin:0 0 12px;}
-.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
-.chip{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.02em;
-  border:1px solid var(--line);background:var(--surface);border-radius:5px;
-  padding:8px 12px;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;}
-.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
-
-/* ---------- RECORD ---------- */
-.record{border-top:1px solid var(--line);margin-top:34px;}
-.rec{display:grid;grid-template-columns:minmax(0,145px) minmax(0,1fr) minmax(0,210px);
-  gap:clamp(14px,3vw,36px);padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;}
-.rec .co{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--accent);font-weight:500;}
-.rec .txt{margin:0;font-size:15px;line-height:1.66;color:var(--ink-2);font-weight:400;}
-.rec .txt strong{font-weight:500;color:var(--ink);}
-.rec .num{font-family:var(--display);font-size:clamp(20px,2.2vw,27px);font-weight:500;
-  letter-spacing:-.03em;line-height:1.12;text-align:right;color:var(--ink);}
-.rec .num small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;
-  letter-spacing:0;color:var(--ink-3);margin-top:6px;line-height:1.45;}
-
-/* ---------- CASES ---------- */
-.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.7fr);
-  gap:clamp(16px,5vw,56px);padding:34px 0;border-top:1px solid var(--line);}
-.cases .case:last-child{border-bottom:1px solid var(--line);}
-.case .org{font-family:var(--mono);font-size:10px;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--ink-3);}
-.case h3{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.1vw,25px);
-  line-height:1.18;letter-spacing:-.028em;margin:12px 0 0;color:var(--ink);}
-.case dl{margin:0;}
-.case dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-3);margin-top:18px;}
-.case dt:first-child{margin-top:0;}
-.case dd{margin:7px 0 0;font-size:14.8px;line-height:1.68;color:var(--ink-2);font-weight:400;}
-.case dd strong{font-weight:500;color:var(--ink);}
-.case dd.result{color:var(--ink);}
-.case dd.result strong{color:var(--accent);font-weight:600;}
-
-/* ---------- WRITING ---------- */
-.dual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}
-.card{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:26px 24px;
-  transition:border-color .25s,transform .25s,box-shadow .25s;display:block;}
-.card:hover{border-color:var(--accent);transform:translateY(-3px);
-  box-shadow:0 8px 28px rgba(17,36,29,.07);}
-.card .meta{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--ink-3);}
-.card h4{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.28;
-  letter-spacing:-.022em;margin:13px 0 0;color:var(--ink);}
-.card p{margin:9px 0 0;font-size:14.5px;color:var(--ink-2);font-weight:400;line-height:1.6;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+.chip{font-family:var(--mono);font-size:12px;color:var(--ink-2);
+  border:1px solid var(--line);background:var(--raise);border-radius:7px;padding:8px 13px;
+  transition:border-color .18s,color .18s,background .18s;}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-wash);}
 
 /* ---------- CONTACT ---------- */
-.contact{border-top:1px solid var(--line);background:var(--surface);position:relative;overflow:hidden;}
-.contact::before{content:"";position:absolute;bottom:-60%;left:50%;transform:translateX(-50%);
-  width:820px;height:560px;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(27,107,79,.07),transparent 68%);}
-.contact .wrap{padding:clamp(76px,11vh,128px) var(--gut);position:relative;}
-.contact h2{font-size:clamp(30px,4.4vw,52px);max-width:16ch;letter-spacing:-.035em;}
-.contact h2 em{font-style:normal;color:var(--accent);}
-.contact p{max-width:50ch;color:var(--ink-2);font-weight:400;font-size:17px;
-  margin:22px 0 0;line-height:1.72;}
-.contact .btn-primary{margin-top:32px;padding:14px 26px;font-size:14px;}
-.contact-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:26px;
-  border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);}
-.contact-links a{transition:color .2s;}
-.contact-links a:hover{color:var(--accent);}
-.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  padding:26px 0;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);}
+.contact{background:var(--sink);border-top:1px solid var(--line);}
+.contact h2{max-width:15ch;}
+.contact h2 em{font-style:italic;color:var(--accent);}
+.contact .lede{margin-bottom:0;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.step{background:var(--raise);border:1px solid var(--line);border-radius:12px;padding:26px 24px;}
+.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.step h4{font-family:var(--display);font-size:20px;font-weight:500;margin:12px 0 0;color:var(--ink);}
+.step p{margin:8px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+.step a{display:inline-block;margin-top:13px;font-size:13.5px;font-weight:500;color:var(--accent);}
+.step a:hover{color:var(--ink);}
+@media(max-width:840px){.steps{grid-template-columns:1fr;}}
+.contact .cta-row{margin-top:38px;}
+.links{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:44px;padding-top:26px;
+  border-top:1px solid var(--line);font-size:14px;color:var(--ink-2);}
+.links a:hover{color:var(--accent);}
+footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  padding:26px 0;font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);}
 
 /* ---------- REVEAL ---------- */
-.rv{opacity:0;transform:translateY(14px);
-  transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);}
+.rv{opacity:0;transform:translateY(16px);
+  transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1);}
 .rv.in{opacity:1;transform:none;}
 
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:36px;}
-  .portrait{max-width:340px;}
-  .offers{grid-template-columns:1fr;}
-  .rec{grid-template-columns:minmax(0,125px) minmax(0,1fr);}
-  .rec .num{grid-column:1/-1;text-align:left;margin-top:6px;}
-  .rec .num small{display:inline;margin-left:9px;}
+@media(max-width:820px){
+  .proof-in{grid-template-columns:1fr 1fr;}
+  .stat{padding:26px 16px;border-top:1px solid var(--line);}
+  .stat:nth-child(1),.stat:nth-child(2){border-top:0;}
+  .stat:nth-child(odd){border-left:0;padding-left:0;}
+  .stat:nth-child(even){padding-right:0;}
 }
-@media(max-width:860px){
-  .metrics-in{grid-template-columns:1fr 1fr;}
-  .metric{padding:30px 18px;border-top:1px solid var(--line);}
-  .metric:nth-child(1),.metric:nth-child(2){border-top:0;}
-  .metric:nth-child(odd){border-left:0;padding-left:0;}
-  .metric:nth-child(even){padding-right:0;}
-  .grid2,.fit,.dual{grid-template-columns:1fr;}
-  .case{grid-template-columns:1fr;gap:16px;}
-}
-@media(max-width:760px){
+@media(max-width:720px){
   .nav-links{display:none;}
-  .nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:16px;
-    position:absolute;top:64px;left:0;right:0;background:var(--paper);
+  .nav-links.show{display:flex;flex-direction:column;align-items:flex-start;gap:18px;
+    position:absolute;top:66px;left:0;right:0;background:var(--paper);
     padding:22px var(--gut) 26px;border-bottom:1px solid var(--line);}
-  .nav-links.open .nav-div{width:100%;height:1px;}
-  .nav-toggle{display:block;}
-  .btn{flex:1 1 100%;text-align:center;}
-  .rec{grid-template-columns:1fr;gap:6px;}
+  .burger{display:block;}
+  .cta-row .btn{flex:1 1 100%;text-align:center;}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
-  .rv{opacity:1;transform:none;} html{scroll-behavior:auto;}
+  *,*::before,*::after{transition-duration:.001ms!important;}
+  .rv{opacity:1;transform:none;}html{scroll-behavior:auto;}
 }
 </style>
 </head>
@@ -275,181 +237,107 @@ h2{font-family:var(--display);font-weight:500;
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a href="#top" class="logo">Shama Keskar<span>.</span></a>
-    <nav class="nav-links" id="navLinks" aria-label="Main">
+    <a href="#top" class="logo">Shama Keskar<i>.</i></a>
+    <nav class="nav-links" id="links" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#stack">Stack</a>
-      <a href="#about">Track record</a>
-      <span class="nav-div" aria-hidden="true"></span>
-      <span class="social">
-        <a href="https://github.com/ShamaVox" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/shamakeskar" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-        </a>
-        <a href="https://substack.com/@shamakeskar" target="_blank" rel="noopener" aria-label="Substack">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M22.54 8.52H1.46V5.4h21.08zM1.46 11.1h21.08V24l-10.54-5.9L1.46 24zM22.54 0H1.46v3.12h21.08z"/></svg>
-        </a>
-        <a href="https://x.com/shamakeskar" target="_blank" rel="noopener" aria-label="X">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.03 4.13H5.06z"/></svg>
-        </a>
-      </span>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a href="https://calendly.com/shama-keskar/30min" class="nav-cta" target="_blank" rel="noopener">Book a call</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
   </div>
 </header>
 
 <main id="top">
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Fractional CTO &nbsp;/&nbsp; Agentic Systems &nbsp;/&nbsp; Seed to Series B</p>
-      <h1>I build the part of AI that has to be <em>right</em>.</h1>
-      <p class="hero-sub">
-        Getting a model to produce something is easy. Knowing whether it was right, and catching it
-        when it wasn't, is the whole job. That is the part I work on.
-      </p>
-      <p class="hero-sub">
-        You work with me. No account manager, no team of contractors I hand you off to.
-        <strong>Three-time founding CTO.</strong> Before that I ran engineering at Google, LinkedIn,
-        and Amazon. I still write the code.
-      </p>
-      <div class="hero-actions">
-        <a href="#services" class="btn btn-primary">What I do</a>
-        <a href="#work" class="btn btn-ghost">Case studies</a>
-        <a href="https://calendly.com/shama-keskar/30min" class="btn btn-ghost" target="_blank" rel="noopener">Book a call</a>
-      </div>
-    </div>
-    <div class="portrait">
-      <div class="frame"><img src="portrait.jpg" alt="Shama Keskar"></div>
-    </div>
-  </div>
-</section>
-
-<section class="metrics" aria-label="At a glance">
-  <div class="metrics-in">
-    <div class="metric rv">
-      <span class="fig">96%</span>
-      <span class="lbl">Production AI accuracy</span>
-      <span class="note">On messy unstructured data, live with paying customers</span>
-    </div>
-    <div class="metric rv">
-      <span class="fig">10&times;</span>
-      <span class="lbl">Faster API response</span>
-      <span class="note">30 seconds down to 3, on a system already in production</span>
-    </div>
-    <div class="metric rv">
-      <span class="fig">60%</span>
-      <span class="lbl">Fewer production incidents</span>
-      <span class="note">Caught before customers found them, not after</span>
-    </div>
-    <div class="metric rv">
-      <span class="fig">10 hrs</span>
-      <span class="lbl">Back per engineer, per week</span>
-      <span class="note">Build and test pipeline rebuilt at Amazon</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="why">
   <div class="wrap">
-    <p class="eyebrow">Why teams call me</p>
-    <h2>Every AI project I have watched fail, failed the same way.</h2>
-    <p class="lede rv">
-      The demo worked. Everyone was happy. Then real data showed up, or a real customer did,
-      and the thing that looked finished turned out to be about 40% of the work.
+    <p class="eyebrow">Fractional CTO &middot; Agentic AI &middot; 20 years building at scale</p>
+    <h1>I build and ship agentic AI from idea to <em>production</em>.</h1>
+    <p class="hero-sub">
+      Three-time founding CTO. I turn AI from a promising demo into a system your customers
+      rely on every day &mdash; <b>accurate, reliable, and trusted at scale</b> &mdash; and I stay
+      in the code the whole way.
     </p>
-    <p class="lede rv">
-      The missing 60% is almost always the same. Nothing checks whether the model was right.
-      The model decides when it is done. Retries run until the bill arrives. And when something
-      breaks, nobody can reconstruct what happened.
-    </p>
-    <p class="lede rv">
-      I have built that layer four times. I would rather help you build it before the rewrite than after.
-    </p>
+    <div class="pedigree">
+      <span>Two decades across</span>
+      <b>Google</b><span class="dot"></span><b>LinkedIn</b><span class="dot"></span><b>Amazon</b>
+    </div>
+    <div class="cta-row">
+      <a href="#services" class="btn btn-fill">See how I work</a>
+      <a href="#work" class="btn btn-line">Selected work</a>
+    </div>
   </div>
 </section>
 
-<section class="section tight" id="direct">
-  <div class="wrap">
-    <p class="eyebrow">Working with one person</p>
-    <h2>Why this beats hiring an agency.</h2>
-    <div class="grid2 rv">
-      <div>
-        <p class="h">You get the senior person</p>
-        <p class="d">There is nobody between us. Whoever reviews your architecture is the same person who writes the fix.</p>
-      </div>
-      <div>
-        <p class="h">One decision maker, so it moves</p>
-        <p class="d">No scoping meetings with a delivery lead. No change orders. You tell me what changed and we change it.</p>
-      </div>
-      <div>
-        <p class="h">I have shipped this before</p>
-        <p class="d">Three founding CTO seats and twenty years of production systems. I know which shortcuts cost you later because I have taken most of them.</p>
-      </div>
-      <div>
-        <p class="h">I will tell you when the answer is no</p>
-        <p class="d">An agency is paid to find you more work. I would rather keep the relationship than sell you a project you do not need.</p>
-      </div>
-    </div>
+<!-- PROOF -->
+<section class="proof" aria-label="Proof">
+  <div class="proof-in">
+    <div class="stat rv"><span class="n">96%</span><span class="k">Production AI accuracy</span><span class="s">On messy unstructured data, live with paying customers</span></div>
+    <div class="stat rv"><span class="n">10&times;</span><span class="k">Faster API response</span><span class="s">30 seconds to 3, on a system already in production</span></div>
+    <div class="stat rv"><span class="n">60%</span><span class="k">Fewer incidents</span><span class="s">Caught before customers found them, not after</span></div>
+    <div class="stat rv"><span class="n">175&times;</span><span class="k">Revenue growth owned</span><span class="s">$20K MRR to $3.5M ARR as founding CTO</span></div>
+  </div>
+</section>
 
-    <div class="fit rv">
-      <div class="yes">
-        <span class="tag">Good fit</span>
-        <ul>
-          <li>Seed through Series B</li>
-          <li>You have engineers, or are about to hire the first ones</li>
-          <li>You are putting AI in front of paying customers</li>
-          <li>Something about that is keeping you up and you cannot name it yet</li>
-          <li>You want someone who will disagree with you</li>
-        </ul>
+<!-- WHAT -->
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What I do</p>
+    <h2>I make AI production-grade.</h2>
+    <p class="lede">Anyone can get a model to produce something. The value is in a system that is right every time, catches its own mistakes, and holds up when real customers and real data arrive.</p>
+
+    <div class="what rv">
+      <div class="row">
+        <h3>Senior from day one</h3>
+        <p>You work directly with me. The person reviewing your architecture is the one writing the code, so decisions land fast.</p>
       </div>
-      <div class="no">
-        <span class="tag">Not a fit</span>
-        <ul>
-          <li>You need a team of five to build an app</li>
-          <li>You want a deck, not a system</li>
-          <li>The decision is made and you want it validated</li>
-          <li>Staff augmentation by the hour</li>
-        </ul>
+      <div class="row">
+        <h3>Built for scale</h3>
+        <p>Systems I have shipped run in production for hundreds of millions of users. I design for the load, cost, and reliability you will need a year out.</p>
+      </div>
+      <div class="row">
+        <h3>Trust as the product</h3>
+        <p>Verification, confidence scoring, and graceful recovery built in, so your team and your customers can rely on what the AI produces.</p>
+      </div>
+      <div class="row">
+        <h3>Straight answers</h3>
+        <p>Twenty years of judgement about what to build, what to buy, and what to skip. You get the honest call, including when it saves you a quarter.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section tight" id="services">
+<!-- SERVICES -->
+<section class="tight">
   <div class="wrap">
-    <p class="eyebrow">Three ways to work together</p>
+    <p class="eyebrow">Ways to work together</p>
     <h2>Pick by how much of me you need.</h2>
-    
-   <div class="offers">
-      <div class="offer rv">
-        <span class="idx">01 &nbsp;/&nbsp; One week</span>
+
+    <div class="svc">
+      <div class="card rv">
+        <span class="tag">Architecture &amp; risk</span>
         <h3>Architecture audit</h3>
-        <p class="meta">Fixed scope. Written findings.</p>
+        <p class="when">Fixed scope, written findings.</p>
         <p class="for">You have a prototype or a live system and you are about to scale it, ship it, or raise on it.</p>
         <ul>
-          <li>I read the code and the architecture, not the deck</li>
-          <li>Where the model is making decisions your code should be making</li>
-          <li>Retry behaviour, token spend, and what happens when the loop does not stop</li>
-          <li>API design, data handling, and the security holes prototypes usually carry</li>
-          <li>Whether you can reconstruct, afterward, why it did what it did</li>
-          <li>What your team is missing and who to hire for it</li>
+          <li>Where the model is deciding what your code should decide</li>
+          <li>Retry behaviour, token spend, and failure modes</li>
+          <li>API design, data handling, and security gaps</li>
+          <li>What your team is missing, and who to hire</li>
         </ul>
-        <p class="out"><b>You get</b>A written list of what will break, ranked by what it costs when it does. Sometimes the answer is that it is fine. I will say that too.</p>
+        <a class="go" href="https://calendly.com/shama-keskar/30min" target="_blank" rel="noopener">Book a call &rarr;</a>
       </div>
 
-      <div class="offer rv">
-        <span class="idx">02 &nbsp;/&nbsp; Two to six weeks, full time</span>
-        <h3>Hands-on Agentic builder (Idea to Market) </h3>
-        <p class="meta">Hands on the keyboard, in your repo.</p>
-        <p class="for">You need the thing built ground-up, or you have a model that works most of the time and most of the time is not a product you can charge for.</p>
+      <div class="card rv">
+        <span class="tag">Idea to market</span>
+        <h3>Hands-on agentic builder</h3>
+        <p class="when">Hands on the keyboard, in your repo.</p>
+        <p class="for">You need the thing built ground-up, or you have a model that works most of the time &mdash; and most of the time is not a product you can charge for.</p>
         <ul>
           <li>Multi-agent workflows and autonomous pipelines, from nothing or from your prototype</li>
           <li>RAG, retrieval, and ingestion architecture that survives real documents</li>
@@ -458,221 +346,146 @@ h2{font-family:var(--display);font-weight:500;
           <li>Confidence scoring, evals, and a threshold you can actually tune</li>
           <li>Tracing, so you can see which node burned the tokens</li>
         </ul>
-        <p class="out"><b>You get</b>Working code your engineers can extend. This is the work that took my last document pipeline to 96% in production.</p>
+        <p class="out"><b>You get</b>Working code your engineers can extend, and you keep full IP ownership. This is the work that took my last document pipeline to 96% in production.</p>
+        <a class="go" href="https://calendly.com/shama-keskar/30min" target="_blank" rel="noopener">Book a call &rarr;</a>
       </div>
 
-      <div class="offer rv">
-        <span class="idx">03 &nbsp;/&nbsp; Ongoing, 10 to 15 hrs a week</span>
+      <div class="card rv">
+        <span class="tag">Ongoing leadership</span>
         <h3>Fractional CTO</h3>
-        <p class="meta">Roadmap, team, and board.</p>
+        <p class="when">Roadmap, team, and board.</p>
         <p class="for">You need senior technical leadership and cannot justify a full-time executive yet.</p>
         <ul>
-          <li>Own the roadmap and the tradeoffs that come with it</li>
-          <li>What to build, what to buy, and what to stop</li>
-          <li>Hire and vet engineers, and raise the bar on the team you have</li>
-          <li>Investor due diligence prep, because they will ask how it works</li>
-          <li>Sit in the board conversation and the customer conversation</li>
+          <li>Own the roadmap and the tradeoffs it carries</li>
+          <li>Hire and vet engineers, raise the team&rsquo;s bar</li>
+          <li>Investor due-diligence prep</li>
           <li>Write code on the hard parts, not just review it</li>
         </ul>
-        <p class="out"><b>You get</b>Engineering that ships on a schedule, and people who can keep doing it after I leave.</p>
+        <a class="go" href="https://calendly.com/shama-keskar/30min" target="_blank" rel="noopener">Book a call &rarr;</a>
       </div>
     </div>
 
-       <p class="lede rv" style="margin-top:30px">
-      Scope depends on what you are actually dealing with, so I work that out on a call rather than
-      guessing at it here. If you need less than this, a few hours a month of advisory works too.
-      And if what you need is not one of these, I will say so and point you at someone better suited.
+    <p class="svc-note rv">Every engagement is scoped to what you are building. If lighter-touch advisory is closer to what you need, that works too.</p>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="tight">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Three companies, built from zero.</h2>
+
+    <div class="work">
+      <article class="job rv">
+        <div>
+          <span class="role">Founding CTO &middot; AI-native retail</span>
+          <h3>Multi-agent document intelligence, trusted in production</h3>
+          <p>Built a platform that turns messy vendor documents into structured, verified records &mdash; confidence scoring on every field, bounded retries, and human review only where it earns its place. Live with paying merchants.</p>
+        </div>
+        <div class="metric"><span class="big">96%</span><span class="cap">extraction accuracy in production</span></div>
+      </article>
+
+      <article class="job rv">
+        <div>
+          <span class="role">Founding CTO &middot; Nickelytics</span>
+          <h3>Edge AI that made moving advertising measurable</h3>
+          <p>Built the edge computer-vision and attribution platform, the infrastructure, and the team &mdash; the first out-of-home format with exposure data advertisers could actually verify. Later reached an eight-figure exit.</p>
+        </div>
+        <div class="metric"><span class="big">175&times;</span><span class="cap">$20K MRR to $3.5M ARR</span></div>
+      </article>
+
+      <article class="job rv">
+        <div>
+          <span class="role">Founding CTO &middot; SignAI</span>
+          <h3>Real-time sign language interpretation on commodity hardware</h3>
+          <p>Solved the latency problem that makes live interpretation possible, running both directions on ordinary devices. Delivered validation demos to Microsoft, then handed it off as a Deaf-led initiative.</p>
+        </div>
+        <div class="metric"><span class="big">Real&nbsp;time</span><span class="cap">bidirectional, commodity hardware</span></div>
+      </article>
+    </div>
+
+    <p class="earlier rv">
+      Before founding: <b>Sr. Director of Engineering at Aspiration</b>, where I launched a
+      carbon-neutral credit card and was recognised as a tech innovator in the
+      <a href="REPLACE_WITH_LA_BULLETIN_URL" target="_blank" rel="noopener">LA Bulletin</a>
+      &mdash; approval rates 15% to 32%, latency 30s to 3s, incidents down 60%. And a decade of
+      quality and platform leadership at <b>Amazon</b> (Alexa Skills, 20K to 100K+ across 250M+
+      devices; Amazon&rsquo;s first physical stores), <b>LinkedIn</b> (mobile relaunch in three
+      months), and <b>Google</b> (quality for the ads revenue engine).
     </p>
   </div>
 </section>
 
-<section class="section tight" id="stack">
+<!-- SKILLS -->
+<section id="skills" class="tight">
   <div class="wrap">
-    <p class="eyebrow">What I build with</p>
-    <h2>The tools I use most weeks.</h2>
-    <p class="lede rv">Not a list of everything I have touched. These are the ones I am currently fast in.</p>
+    <p class="eyebrow">Technical skills</p>
+    <h2>What I build with.</h2>
 
-    <div class="stack rv">
-      <p class="stack-lbl">LLM &amp; agent pipelines</p>
-      <div class="stack-row">
+    <div class="skills rv">
+      <p class="skill-lbl">Agentic AI &amp; LLM pipelines</p>
+      <div class="chips">
         <span class="chip">Claude API</span><span class="chip">Tool use</span>
         <span class="chip">Multi-agent orchestration</span><span class="chip">Structured ingestion</span>
         <span class="chip">RAG &amp; retrieval</span><span class="chip">Evals</span>
         <span class="chip">Tracing &amp; observability</span>
       </div>
-      <p class="stack-lbl">Frameworks &amp; languages</p>
-      <div class="stack-row">
+      <p class="skill-lbl">Languages &amp; frameworks</p>
+      <div class="chips">
         <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">FastAPI</span>
         <span class="chip">Pydantic</span><span class="chip">Zod</span>
         <span class="chip">Next.js</span><span class="chip">React</span>
       </div>
-      <p class="stack-lbl">Infrastructure &amp; data</p>
-      <div class="stack-row">
+      <p class="skill-lbl">Infrastructure &amp; data</p>
+      <div class="chips">
         <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">DynamoDB</span>
         <span class="chip">Vector stores</span><span class="chip">AWS</span>
         <span class="chip">Event pipelines</span><span class="chip">Shopify APIs</span>
       </div>
-    </div>
-      <p class="stack-lbl">Frontend and integrations</p>
-      <div class="stack-row">
-        <span class="chip">Next.js</span><span class="chip">React</span>
-        <span class="chip">Shopify APIs</span><span class="chip">Stripe</span>
+      <p class="skill-lbl">Leadership</p>
+      <div class="chips">
+        <span class="chip">Technical strategy</span><span class="chip">Fundraising &amp; diligence</span>
+        <span class="chip">Hiring &amp; team building</span><span class="chip">Board &amp; customer comms</span>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section tight" id="beyond">
-  <div class="wrap">
-    <p class="eyebrow">Beyond the code</p>
-    <h2>The parts of a CTO job that are not engineering.</h2>
-    <div class="grid2 rv">
-      <div>
-        <p class="h">Technical strategy and vision</p>
-        <p class="d">Where the product should be in eighteen months, what has to be true to get there, and what you are choosing not to do. Written down, so the team can act on it.</p>
-      </div>
-      <div>
-        <p class="h">Fundraising and diligence</p>
-        <p class="d">The technical narrative for the deck, the architecture answers investors will press on, and the diligence prep that stops a round stalling on a question you did not expect.</p>
-      </div>
-      <div>
-        <p class="h">Product and engineering, together</p>
-        <p class="d">I have owned both. Roadmaps that survive contact with what is actually buildable, and scope conversations that end in a decision rather than a follow-up.</p>
-      </div>
-      <div>
-        <p class="h">Board and customer conversations</p>
-        <p class="d">Explaining a system to people who will not read the architecture doc. Twenty years of doing it at Google, LinkedIn, Amazon, and three of my own companies.</p>
-      </div>
-    </div>
-  </div>
-</section>  
-
-<section class="section tight" id="about">
-  <div class="wrap">
-    <p class="eyebrow">Track record</p>
-    <h2>Twenty years in the room when the technical call had money behind it.</h2>
-    <div class="record">
-      <div class="rec rv">
-        <span class="co">Google</span>
-        <p class="txt">Owned quality for the ads infrastructure across <strong>search, TV, and radio</strong>. It was the revenue engine, so nothing shipped broken.</p>
-        <span class="num">~98%<small>of company revenue on the surface I covered</small></span>
-      </div>
-      <div class="rec rv">
-        <span class="co">LinkedIn</span>
-        <p class="txt">Led the <strong>relaunch of the mobile app</strong>. Shipped in three months and grew the team from 4 to 40.</p>
-        <span class="num">3 months<small>concept to shipped</small></span>
-      </div>
-      <div class="rec rv">
-        <span class="co">Amazon</span>
-        <p class="txt">Owned quality, security, and release velocity for the Alexa skills catalog while it grew <strong>five times over</strong>.</p>
-        <span class="num">20K &rarr; 100K+<small>skills across 250M+ devices</small></span>
-      </div>
-      <div class="rec rv">
-        <span class="co">Amazon</span>
-        <p class="txt">Launched <strong>physical retail technology</strong>. Grocery and fashion stores, point of sale, electronic shelf labels, the whole hardware and software stack.</p>
-        <span class="num">4 &rarr; 50+<small>engineers hired, built, retained</small></span>
-      </div>
-      <div class="rec rv">
-        <span class="co">Founding CTO &times;3</span>
-        <p class="txt">Built three companies from zero in <strong>edge AI, accessibility, and AI-native retail</strong>. Reported to CEOs, boards, and investors the whole way.</p>
-        <span class="num">$20K &rarr; $3.5M<small>MRR to ARR on the platform I built</small></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section tight" id="work">
-  <div class="wrap">
-    <p class="eyebrow">Selected work</p>
-    <h2>Same pattern in all of them.</h2>
-    <p class="lede rv">
-      Something generates, something else checks it, and there is a defined path for when the check
-      fails. That is what separates a system a company will run from one that only demos well.
-    </p>
-
-    <div class="cases" style="margin-top:34px">
-
-      <article class="case rv">
-        <div>
-          <span class="org">AI-native retail platform</span>
-          <h3>Multi-agent document intelligence</h3>
-        </div>
-        <dl>
-          <dt>Context</dt>
-          <dd>Retailers were losing thousands of hours to manual data entry from vendor documents. Usually right is not a standard you can run a business on.</dd>
-          <dt>Architecture</dt>
-          <dd>Multi-agent extraction turning messy vendor documents into typed, validated records. <strong>Confidence scoring</strong> on every field, <strong>bounded retry</strong> instead of open-ended loops, and escalation to a human when the score drops. When it fails it fails into a known state rather than a plausible wrong one.</dd>
-          <dt>Result</dt>
-          <dd class="result"><strong>96% extraction accuracy</strong> in production with live paying merchants. Built a custom onboarding path around a platform certification bottleneck so sales did not stall.</dd>
-          <dt>Stack</dt>
-          <dd>Claude API, multi-agent orchestration, confidence scoring, human review tooling, commerce platform integration.</dd>
-        </dl>
-      </article>
-
-      <article class="case rv">
-        <div>
-          <span class="org">Nickelytics</span>
-          <h3>Edge AI telemetry for autonomous assets</h3>
-        </div>
-        <dl>
-          <dt>Context</dt>
-          <dd>Turning moving vehicles into measurable advertising inventory. That needs real attribution, not an estimate someone can argue with.</dd>
-          <dt>Architecture</dt>
-          <dd>Built real-time location tracking, <strong>edge attribution telemetry</strong>, and computer vision running on the vehicle. Wrote the software foundations from nothing and built the team to run them.</dd>
-          <dt>Result</dt>
-          <dd class="result">Scaled recurring revenue from <strong>$20K MRR to $3.5M ARR</strong>, owning product, delivery, infrastructure cost, and the org through the whole climb.</dd>
-          <dt>Stack</dt>
-          <dd>Edge computer vision, real-time geospatial tracking, attribution pipeline, cloud infrastructure engineered for sublinear cost scaling.</dd>
-        </dl>
-      </article>
-
-      <article class="case rv">
-        <div>
-          <span class="org">SignAI</span>
-          <h3>Real-time multimodal translation</h3>
-        </div>
-        <dl>
-          <dt>Context</dt>
-          <dd>Sign language interpretation is a latency problem dressed up as a translation problem. An interpreter that lags is not an interpreter.</dd>
-          <dt>Architecture</dt>
-          <dd>Bidirectional real-time ASL and English interpretation using gesture and pose modeling, low-latency inference, and edge optimization on commodity hardware.</dd>
-          <dt>Result</dt>
-          <dd class="result">Delivered a <strong>working real-time bidirectional prototype</strong> on commodity hardware and ran technical validation demos for <strong>Microsoft</strong>. Handed the platform off as a Deaf-led initiative. Accessibility work belongs with the community it serves.</dd>
-          <dt>Stack</dt>
-          <dd>Computer vision, gesture and pose modeling, low-latency inference, bidirectional translation pipeline.</dd>
-        </dl>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section tight">
-  <div class="wrap">
-    <p class="eyebrow">Writing</p>
-    <h2>Working notes from production systems.</h2>
-    <div class="dual">
-      <a class="card rv" href="#">
-        <span class="meta">Substack / Architecture</span>
-        <h4>Designing a four-layer fallback pipeline for agentic workflows</h4>
-        <p>What to build for the path after the model is wrong.</p>
-      </a>
-      <a class="card rv" href="#">
-        <span class="meta">Essay</span>
-        <h4>Quality is an operational standard, not a development tax</h4>
-        <p>The case against treating reliability as what you do after the feature works.</p>
-      </a>
     </div>
   </div>
 </section>
 
 </main>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow">Contact</p>
+    <p class="eyebrow">Start here</p>
     <h2>Talk to me <em>before</em> the rebuild.</h2>
-    <p>Thirty minutes, no deck. Tell me what you are building and what is worrying you about it. If I can help I will say how. If I cannot I will say that.</p>
-    <a href="https://calendly.com/shama-keskar/30min" class="btn btn-primary" target="_blank" rel="noopener">Book a 30-minute call</a>
-    <div class="contact-links">
+    <p class="lede">Thirty minutes, no deck, no charge. Tell me what you are building and what is worrying you about it. If I can help, I will say how. If I cannot, I will say that too.</p>
+
+    <div class="steps">
+      <div class="step rv">
+        <span class="n">Step 01</span>
+        <h4>Book the call</h4>
+        <p>Thirty minutes, free. Pick a time that works.</p>
+        <a href="https://calendly.com/shama-keskar/30min" target="_blank" rel="noopener">Open my calendar &rarr;</a>
+      </div>
+      <div class="step rv">
+        <span class="n">Step 02</span>
+        <h4>Send context first</h4>
+        <p>A short form about what you are building and where it hurts. Five minutes, and we skip straight to the real problem.</p>
+        <a href="REPLACE_WITH_GOOGLE_FORM_URL" target="_blank" rel="noopener">Fill the form &rarr;</a>
+      </div>
+      <div class="step rv">
+        <span class="n">Step 03</span>
+        <h4>Scope and start</h4>
+        <p>If it is a fit, you get a written scope with timeline and cost within two days.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://calendly.com/shama-keskar/30min" class="btn btn-fill" target="_blank" rel="noopener">Book a discovery call</a>
+      <a href="REPLACE_WITH_GOOGLE_FORM_URL" class="btn btn-line" target="_blank" rel="noopener">Send project details</a>
+    </div>
+
+    <div class="links">
       <a href="mailto:shama.keskar@gmail.com">shama.keskar@gmail.com</a>
       <a href="https://github.com/ShamaVox" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
@@ -681,25 +494,24 @@ h2{font-family:var(--display);font-weight:500;
   </div>
 </section>
 
-<footer><div class="wrap"><div class="foot"><span>&copy; 2026 Shama Keskar</span><span>Seattle, Washington</span></div></div></footer>
+<footer><div class="wrap"><div class="f"><span>&copy; 2026 Shama Keskar</span><span>Seattle, Washington</span></div></div></footer>
 
 <script>
 (function(){
   var nav=document.getElementById('nav');
-  var s=function(){nav.classList.toggle('scrolled',window.scrollY>10);};
-  s();window.addEventListener('scroll',s,{passive:true});
-  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-  t.addEventListener('click',function(){var o=l.classList.toggle('open');
-    t.setAttribute('aria-expanded',String(o));t.setAttribute('aria-label',o?'Close menu':'Open menu');});
-  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');
-    t.setAttribute('aria-expanded','false');}});
-  var i=document.querySelectorAll('.rv');
+  var on=function(){nav.classList.toggle('on',window.scrollY>8);};
+  on();addEventListener('scroll',on,{passive:true});
+  var b=document.getElementById('burger'),l=document.getElementById('links');
+  b.addEventListener('click',function(){var o=l.classList.toggle('show');
+    b.setAttribute('aria-expanded',String(o));});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('show');});
+  var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},
       {threshold:.08,rootMargin:'0px 0px -6% 0px'});
-    i.forEach(function(x){io.observe(x);});
-  }else{i.forEach(function(x){x.classList.add('in');});}
+    els.forEach(function(x){io.observe(x);});
+  }else els.forEach(function(x){x.classList.add('in');});
 })();
 </script>
 </body>
