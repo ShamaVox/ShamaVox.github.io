@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shama Keskar | AI engineer for production LLM systems</title>
+<meta name="description" content="I take LLM and agentic systems from demo to production: evals, validation, repair loops and monitoring. Hands-on AI engineer and three-time founding CTO.">
+<meta name="theme-color" content="#102A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F7F6; --panel:#FFFFFF; --ink:#102A3A; --soft:#4F6270; --line:#D3DCDF;
+  --navy:#102A3A; --navy-2:#1A3B4F; --on-navy:#EAF2F5; --on-navy-soft:#A9C2CE;
+  --teal:#0F7A68; --teal-bright:#3CC4A6; --teal-tint:#E0F1EB;
+  --amber:#B8740F; --amber-tint:#FBEBCD;
+  --coral:#C4463A; --coral-tint:#F8DEDA;
+  --sky-tint:#E1EDF4; --lav-tint:#EAE5F5; --lav:#5B4A9B;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1920; --panel:#16232C; --ink:#E4ECEF; --soft:#9DB0BA; --line:#273945;
+    --navy:#0B1A23; --navy-2:#132835;
+    --teal:#4CC9AC; --teal-tint:#123429; --amber:#E9AE52; --amber-tint:#352812;
+    --coral:#F08B7E; --coral-tint:#3A1E1B; --sky-tint:#142A36; --lav-tint:#221E36; --lav:#B7A8F0;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1920; --panel:#16232C; --ink:#E4ECEF; --soft:#9DB0BA; --line:#273945;
+  --navy:#0B1A23; --navy-2:#132835;
+  --teal:#4CC9AC; --teal-tint:#123429; --amber:#E9AE52; --amber-tint:#352812;
+  --coral:#F08B7E; --coral-tint:#3A1E1B; --sky-tint:#142A36; --lav-tint:#221E36; --lav:#B7A8F0;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:18px; line-height:1.55; -webkit-font-smoothing:antialiased}
+a{color:inherit; text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--teal-bright); outline-offset:3px; border-radius:2px}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+
+/* Header */
+header{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:var(--navy); color:var(--on-navy); border-bottom:1px solid rgba(255,255,255,.08)}
+header .wrap{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
+.brand{font-weight:700; text-decoration:none; font-size:17px; display:flex; align-items:center; gap:10px}
+.brand i{width:10px; height:10px; border-radius:50%; background:var(--teal-bright); box-shadow:0 0 0 4px rgba(60,196,166,.2)}
+nav{display:flex; align-items:center; gap:24px; font-size:15px}
+nav a{text-decoration:none; color:var(--on-navy-soft)}
+nav a:hover{color:#fff}
+.btn{display:inline-block; font:600 15px/1 var(--sans); padding:14px 20px; border-radius:6px; text-decoration:none; border:1.5px solid transparent}
+.btn.teal{background:var(--teal-bright); color:#07231C}
+.btn.teal:hover{background:#5BD8BC}
+.btn.ghost{border-color:rgba(234,242,245,.45); color:var(--on-navy)}
+.btn.ghost:hover{border-color:var(--on-navy); background:rgba(255,255,255,.06)}
+.btn.solid{background:var(--teal); color:#fff}
+.btn.solid:hover{filter:brightness(1.1)}
+nav .btn{padding:10px 14px}
+@media (max-width:720px){ nav a:not(.btn){display:none} }
+
+/* Hero */
+.hero{background:var(--navy); color:var(--on-navy); padding:88px 0 104px; position:relative; overflow:hidden}
+.hero::after{content:""; position:absolute; right:-160px; top:-120px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, rgba(60,196,166,.18), transparent 65%); pointer-events:none}
+.hero .wrap{display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center; position:relative; z-index:1}
+h1{font-size:clamp(44px,6.2vw,76px); line-height:.98; letter-spacing:-.035em; font-weight:800; margin:0 0 28px; color:#fff}
+h1 span{display:block; color:var(--teal-bright); font-weight:600}
+.lede{font-size:20px; color:var(--on-navy-soft); max-width:34em; margin:0 0 32px}
+.lede strong{color:#fff; font-weight:600}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+@media (max-width:900px){ .hero .wrap{grid-template-columns:1fr; gap:48px} .hero{padding:56px 0 72px} }
+
+/* Verification panel */
+.check{background:#fff; color:#102A3A; border-radius:12px; font-family:var(--mono); font-size:13.5px; overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.check-head{display:flex; justify-content:space-between; gap:12px; padding:14px 18px; background:#EEF4F6; color:#4F6270}
+.check-head b{color:#102A3A; font-weight:500}
+.rows{padding:6px 0}
+.row{display:grid; grid-template-columns:7.5em 1fr auto; gap:12px; align-items:center; padding:10px 18px; border-bottom:1px dashed #D3DCDF}
+.row:last-child{border-bottom:0}
+.row .k{color:#4F6270}
+.row .v{min-width:0; overflow-wrap:anywhere}
+.row .v del{color:#C4463A; text-decoration-thickness:1.5px}
+.tag{font-size:12px; padding:3px 8px; border-radius:4px; white-space:nowrap; background:#E5EBED; color:#4F6270}
+.tag.ok{background:#D6EFE6; color:#0B6655}
+.tag.fix{background:#FBEBCD; color:#8F5A08}
+.tag.bad{background:#F8DEDA; color:#B03A2F}
+.check-foot{padding:14px 18px; background:#EEF4F6; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.meter{flex:1 1 140px; height:6px; background:#D3DCDF; border-radius:3px; align-self:center; overflow:hidden}
+.meter i{display:block; height:100%; width:0; background:#0F7A68; transition:width .5s ease}
+.foot-msg{color:#4F6270}
+.foot-msg.done{color:#0B6655}
+.caption{font-size:14px; color:var(--on-navy-soft); margin:14px 2px 0}
+
+/* Sections */
+section{padding:96px 0}
+h2{font-size:clamp(32px,4vw,46px); line-height:1.05; letter-spacing:-.03em; font-weight:800; margin:0 0 20px; max-width:18em}
+h3{font-size:22px; letter-spacing:-.015em; line-height:1.25; margin:0 0 10px; font-weight:700}
+p{margin:0 0 16px}
+.intro{color:var(--soft); font-size:19px; max-width:38em; margin-bottom:48px}
+
+/* Story */
+#story{background:var(--panel); padding:88px 0}
+.story-grid{display:grid; grid-template-columns:260px 1fr; gap:56px; align-items:start}
+.story-grid h2{font-size:clamp(28px,3.2vw,38px); margin:0}
+.story-text{max-width:36em; font-size:20px; line-height:1.6}
+.story-text p{margin:0 0 20px}
+.story-text strong{color:var(--teal)}
+.story-text .next{font-weight:600; margin:28px 0 0}
+.story-text .next a{color:var(--teal)}
+@media (max-width:900px){ .story-grid{grid-template-columns:1fr; gap:20px} }
+
+/* Case study */
+#case{background:var(--paper)}
+.case{display:grid; grid-template-columns:260px 1fr; gap:56px}
+.case aside dl{margin:0; display:grid; gap:14px; font-size:15px}
+.case aside dl > div{background:var(--panel); border-left:4px solid var(--teal); border-radius:0 8px 8px 0; padding:14px 16px}
+.case aside dl > div:nth-child(2){border-color:var(--lav)}
+.case aside dt{font-weight:700}
+.case aside dd{margin:4px 0 0; color:var(--soft)}
+.story{max-width:40em}
+.results{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:36px 0}
+.results div{padding:22px; border-radius:10px}
+.results div:nth-child(1){background:var(--teal-tint)}
+.results div:nth-child(2){background:var(--sky-tint)}
+.results div:nth-child(3){background:var(--lav-tint)}
+.results div:nth-child(4){background:var(--amber-tint)}
+.results strong{display:block; font-size:30px; letter-spacing:-.02em; line-height:1.1; margin-bottom:6px}
+.results div:nth-child(1) strong{color:var(--teal)}
+.results div:nth-child(2) strong{color:var(--ink)}
+.results div:nth-child(3) strong{color:var(--lav)}
+.results div:nth-child(4) strong{color:var(--amber)}
+.results span{font-size:15px; color:var(--soft)}
+.pipeline{margin:40px 0 12px}
+.stages{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+.stage{border-radius:10px; padding:16px; border-top:5px solid}
+.stage b{display:block; font-size:16px; margin-bottom:4px}
+.stage span{font-size:14px; color:var(--soft); line-height:1.4; display:block}
+.stage.s1{background:var(--sky-tint); border-color:#3B82B0}
+.stage.s2{background:var(--lav-tint); border-color:var(--lav)}
+.stage.s3{background:var(--teal-tint); border-color:var(--teal)}
+.stage.s4{background:var(--amber-tint); border-color:var(--amber)}
+.loop{margin-top:10px; border:1.5px dashed var(--teal); border-radius:10px; padding:12px 16px; font-size:14px; color:var(--soft)}
+.loop b{color:var(--teal)}
+.quote{font-size:28px; line-height:1.25; letter-spacing:-.02em; font-weight:700; margin:44px 0 0; padding:24px 28px; border-radius:12px; background:var(--navy); color:#fff}
+.quote::before{content:""; display:block; width:40px; height:4px; background:var(--teal-bright); margin-bottom:14px; border-radius:2px}
+@media (max-width:900px){ .case{grid-template-columns:1fr; gap:32px} .stages{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .results{grid-template-columns:1fr} .stages{grid-template-columns:1fr} }
+
+/* Offer */
+#work-with-me{background:var(--teal-tint)}
+.offer{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start}
+.sprint{border-radius:14px; background:var(--panel); overflow:hidden; box-shadow:0 20px 40px -28px rgba(16,42,58,.5)}
+.sprint-top{background:var(--teal); color:#fff; padding:24px 32px}
+.sprint-top h3{font-size:26px; margin:0 0 6px}
+.sprint-top p{margin:0; color:rgba(255,255,255,.85); font-size:16px}
+.sprint-body{padding:8px 32px 32px}
+.weeks{list-style:none; padding:0; margin:0 0 24px}
+.weeks li{display:grid; grid-template-columns:5.5em 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--line)}
+.weeks li b{font-weight:700; color:var(--teal)}
+.weeks li span{color:var(--soft); font-size:16px}
+.fine{font-size:15px; color:var(--soft); margin:0 0 20px}
+.tracks > div{background:var(--panel); border-radius:12px; padding:24px; margin-bottom:16px; border-top:5px solid var(--lav)}
+.tracks > div:last-child{border-top-color:var(--amber)}
+.tracks h3{font-size:20px}
+.tracks p{color:var(--soft); font-size:16px; margin:0}
+@media (max-width:900px){ .offer{grid-template-columns:1fr} .sprint-top,.sprint-body{padding-left:24px; padding-right:24px} }
+
+/* Other work + background */
+.list{display:grid}
+.item{display:grid; grid-template-columns:240px 1fr; gap:40px; padding:26px 0; border-top:1px solid var(--line)}
+.item:first-child{border-top:0; padding-top:0}
+.item .who{font-weight:700; display:flex; gap:12px; align-items:flex-start}
+.item .who::before{content:""; flex:none; width:12px; height:12px; border-radius:3px; margin-top:7px; background:var(--dot,var(--teal))}
+.item .who small{display:block; font-weight:400; color:var(--soft); font-size:15px; margin-top:2px}
+.item p{color:var(--soft); font-size:17px; max-width:40em; margin:0}
+.item p b{color:var(--ink); font-weight:600}
+@media (max-width:720px){ .item{grid-template-columns:1fr; gap:8px} }
+#background{background:var(--sky-tint)}
+.bridge{font-size:24px; line-height:1.3; letter-spacing:-.015em; max-width:30em; margin:0 0 48px; font-weight:500}
+.bridge em{font-style:normal; color:var(--teal); font-weight:700}
+
+/* Stack */
+.stack{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:36px}
+.stack > div{background:var(--panel); border-radius:12px; padding:22px; border-top:5px solid}
+.stack > div:nth-child(1){border-color:var(--teal)}
+.stack > div:nth-child(2){border-color:#3B82B0}
+.stack > div:nth-child(3){border-color:var(--lav)}
+.stack > div:nth-child(4){border-color:var(--amber)}
+.stack h3{font-size:16px; margin-bottom:10px}
+.stack p{color:var(--soft); font-size:15.5px; line-height:1.6; margin:0}
+@media (max-width:900px){ .stack{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .stack{grid-template-columns:1fr} }
+
+/* Contact */
+.contact{background:var(--navy); color:var(--on-navy)}
+.contact h2{color:#fff; max-width:14em}
+.contact .intro{color:var(--on-navy-soft)}
+.contact a{color:#fff}
+.steps{list-style:none; padding:0; margin:40px 0; display:grid; grid-template-columns:repeat(3,1fr); gap:32px; counter-reset:step}
+.steps li{counter-increment:step; border-top:2px solid var(--teal-bright); padding-top:16px}
+.steps li::before{content:counter(step); display:block; font-weight:800; font-size:28px; margin-bottom:8px; color:var(--teal-bright)}
+.steps h3{color:#fff}
+.steps p{color:var(--on-navy-soft); font-size:16px}
+@media (max-width:720px){ .steps{grid-template-columns:1fr} }
+footer{background:var(--navy); border-top:1px solid rgba(255,255,255,.1); padding:28px 0 40px; font-size:15px; color:var(--on-navy-soft)}
+footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px}
+footer nav{gap:20px}
+
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .meter i{transition:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Shama Keskar</a>
+    <nav aria-label="Main">
+      <a href="#story">Story</a>
+      <a href="#case">Case study</a>
+      <a href="#work-with-me">Work with me</a>
+      <a href="#background">Background</a>
+      <a class="btn teal" href="https://calendly.com/shama-keskar/30min">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Most AI never ships.<span>I build the part that does.</span></h1>
+      <p class="lede">I'm an AI engineer who takes LLM and agentic systems from a good demo to something customers can rely on. <strong>Evals, validation, repair loops and monitoring.</strong> I scope it, build it and hand it to your team, and I write the code myself.</p>
+      <div class="ctas">
+        <a class="btn teal" href="https://calendly.com/shama-keskar/30min">Book a 30-minute call</a>
+        <a class="btn ghost" href="#case">Read the case study</a>
+      </div>
+    </div>
+
+    <figure style="margin:0">
+      <div class="check" aria-label="Illustration: one catalog item being checked field by field before it is published">
+        <div class="check-head"><b>incoming catalog</b><span>item 214</span></div>
+        <div class="rows" id="rows">
+          <div class="row"><span class="k">product</span><span class="v">Linen Wrap Midi Dress</span><span class="tag ok">verified</span></div>
+          <div class="row"><span class="k">color</span><span class="v">Navy</span><span class="tag fix">repaired</span></div>
+          <div class="row"><span class="k">sizes</span><span class="v">S, M, L, XL</span><span class="tag fix">repaired</span></div>
+          <div class="row"><span class="k">price</span><span class="v">$42.00</span><span class="tag ok">verified</span></div>
+          <div class="row"><span class="k">quantity</span><span class="v">24</span><span class="tag ok">verified</span></div>
+        </div>
+        <div class="check-foot"><div class="meter"><i id="meter" style="width:100%"></i></div><span class="foot-msg done" id="msg">5 of 5 fields ready to publish</span></div>
+      </div>
+      <figcaption class="caption">What a trust layer does to every record: extract, check, repair what it can, and flag what it can't.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section id="story">
+  <div class="wrap story-grid">
+    <h2>Why I started shamakeskar</h2>
+    <div class="story-text">
+      <p>For the last five years I've been a founding CTO, three times over. Each time I took a rough idea to a working product with real users: edge computer vision for ad measurement, a real-time sign language interpreter, and most recently an AI platform retailers paid for.</p>
+      <p>Every time, the same thing happened. The prototype came together fast. Making it reliable enough for paying customers was the real work, and it's the part most teams underestimate.</p>
+      <p>So I started <strong>shamakeskar</strong>. I work with founders who have a prototype or an early product that works, and I help them turn it into an MVP customers trust, then scale it to hundreds of customers. It's the same discipline I used for sixteen years at Google, LinkedIn and Amazon, now applied to AI.</p>
+      <p class="next"><a href="#case">Here's my most recent build.</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <h2>A multi-agent orchestration platform I built myself, live with paying customers.</h2>
+    <p class="intro">Before starting shamakeskar, I was cofounder and CTO of an AI-native wholesale platform for boutique retailers. I designed and built the whole system, from the first proof of concept to production.</p>
+
+    <div class="case">
+      <aside>
+        <dl>
+          <div><dt>Timeline</dt><dd>Proof of concept to MVP in four months, then production.</dd></div>
+          <div><dt>Stack</dt><dd>Python, FastAPI, Next.js, Postgres with pgvector, Redis, AWS, commercial LLM APIs, Datadog.</dd></div>
+        </dl>
+      </aside>
+
+      <div class="story">
+        <p>Supplier catalogs arrived in every format imaginable. Colors were abbreviated, size runs were written five different ways, and product images came in every size and resolution. Retailers were spending days retyping all of it into their store.</p>
+        <p>Getting a model to read a catalog was the easy part. The hard part was making every field correct, every time, on data nobody had seen before. So I built the checking before I built the features: a golden set of real examples, field-level accuracy tracking, and prompt and model versions logged with every output.</p>
+        <p>The work was split across specialized agents for extraction, sizing, quantities and color, coordinated by plain deterministic code rather than a framework. I chose models by how they scored against the golden set, never by how impressive a demo looked, and every failure could be traced to one place.</p>
+
+        <div class="pipeline" aria-label="System architecture">
+          <div class="stages">
+            <div class="stage s1"><b>Ingestion</b><span>Any supplier catalog, any layout</span></div>
+            <div class="stage s2"><b>Agents</b><span>Specialized agents extract and enrich every field, each with a confidence score</span></div>
+            <div class="stage s3"><b>Orchestration and trust</b><span>Deterministic coordination, validation, bounded repair, human review below the threshold</span></div>
+            <div class="stage s4"><b>Delivery</b><span>Straight into the retailer's store, with sizing and color sync</span></div>
+          </div>
+          <div class="loop"><b>Correction loop:</b> every fix a retailer made went back into the review queue and the eval set, so the system got better with use.</div>
+        </div>
+
+        <div class="results">
+          <div><strong>45% to 98%+</strong><span>first-pass success: right the first time, with no retry or human fix</span></div>
+          <div><strong>96%</strong><span>field-level extraction accuracy on live data</span></div>
+          <div><strong>Days to under an hour</strong><span>to onboard a full supplier catalog</span></div>
+          <div><strong>20 hours a week</strong><span>saved for each buyer</span></div>
+        </div>
+
+        <p class="quote">Generation is solved. Trust is the product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work-with-me">
+  <div class="wrap">
+    <h2>Ways to work together</h2>
+    <p class="intro">Most teams I talk to have an LLM feature that works in the demo and breaks with real customers. That's the problem I solve first.</p>
+
+    <div class="offer">
+      <div class="sprint">
+        <div class="sprint-top">
+          <h3>AI reliability sprint</h3>
+          <p>Two to three weeks on one LLM feature that isn't holding up in production. Fixed scope and a fixed price, agreed before we start.</p>
+        </div>
+        <div class="sprint-body">
+          <ol class="weeks">
+            <li><b>Week 1</b><span>Collect real failures from your logs and users, build an eval set from them, and measure your true first-pass success rate.</span></li>
+            <li><b>Week 2</b><span>Add validation, confidence scoring and bounded repair. Fix the failure types that cost you the most.</span></li>
+            <li><b>Week 3</b><span>Set up monitoring and thresholds, and document everything. Your engineers take it over with full ownership of the code.</span></li>
+          </ol>
+          <p class="fine">You finish with a number you can track, a system that catches its own mistakes, and a clear view of what's left to fix.</p>
+          <a class="btn solid" href="https://calendly.com/shama-keskar/30min">Talk about a sprint</a>
+        </div>
+      </div>
+
+      <div class="tracks">
+        <div>
+          <h3>Forward-deployed build</h3>
+          <p>I work inside your codebase and ship alongside your team: agentic workflows, extraction and RAG pipelines, and integrations with your customers' systems. Scoped by milestone.</p>
+        </div>
+        <div>
+          <h3>Fractional CTO</h3>
+          <p>Architecture, roadmap, hiring and investor diligence for a founder who needs senior technical judgment before a full-time hire makes sense. I still write code on the hard parts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="builds">
+  <div class="wrap">
+    <h2>Other things I've built</h2>
+    <p class="intro">Different domains, same habit: measure first, then make it reliable.</p>
+    <div class="list">
+      <div class="item">
+        <div class="who" style="--dot:var(--lav)">Deck-as-code<small>Personal build, 2026</small></div>
+        <p>A compiler for AI-generated slide decks that keeps human edits intact. One typed boundary, a verify-and-repair step that fixes structural defects in code instead of asking the model again, and a three-way merge on stable IDs. <b>Demoed to Andrew Ng's AI Fund.</b></p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:var(--teal)">SignAI<small>Cofounder and CTO, 2024 to 2025</small></div>
+        <p>A real-time, two-way ASL and English interpreter for Deaf and hard-of-hearing users, built on computer vision, speech models and RAG. <b>93% accuracy with under four seconds of latency on ordinary hardware.</b> Validated in demos with Microsoft, then handed off as a Deaf-led initiative.</p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:var(--amber)">Nickelytics<small>Cofounder and CTO, 2021 to 2022</small></div>
+        <p>Edge computer vision that made out-of-home advertising measurable, with <b>billing-grade exposure data</b> from moving vehicles. I built the models, telemetry pipelines and cloud infrastructure from the ground up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <h2>Sixteen years of making software hold up</h2>
+    <p class="bridge">At Google, LinkedIn and Amazon, reliability meant automation, CI/CD and release engineering. Now it means evals, observability and verify-and-repair loops for AI. <em>Same discipline, new substrate.</em></p>
+    <div class="list">
+      <div class="item">
+        <div class="who" style="--dot:var(--amber)">Amazon<small>Alexa, Amazon Go, Amazon One</small></div>
+        <p>Led a 70+ person quality org for Alexa Skills and built a testing framework for non-deterministic voice behavior. Built the automation that connected in-store sensors with point-of-sale systems for Amazon's first physical stores.</p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:var(--teal)">Aspiration<small>Climate fintech</small></div>
+        <p>Grew my QA org from 4 to 50 and helped launch a carbon-neutral credit card while moving the core platform from a monolith to microservices. <b>API latency from 30 seconds to 3, and 60% fewer incidents.</b></p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:var(--coral)">MNTN<small>Connected-TV advertising</small></div>
+        <p>Brought customer-impacting incidents to zero through root-cause analysis, incident response and automated release gating.</p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:#3B82B0">LinkedIn and Visa</div>
+        <p>Owned quality and engineering productivity for LinkedIn's mobile app overhaul, shipped in three months. Engineering manager at Visa.</p>
+      </div>
+      <div class="item">
+        <div class="who" style="--dot:var(--lav)">Google<small>Where I started</small></div>
+        <p>Joined as a QA engineer with a physics degree and grew into engineering productivity and test leadership for the ads platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <h2>What I build with</h2>
+    <div class="stack">
+      <div><h3>AI and LLM systems</h3><p>Claude and OpenAI APIs, multi-agent workflows, RAG, eval harnesses, prompt versioning, confidence scoring, LangChain and LangSmith</p></div>
+      <div><h3>Languages and frameworks</h3><p>Python, TypeScript, FastAPI, Pydantic, React, Next.js, GraphQL</p></div>
+      <div><h3>Data and infrastructure</h3><p>PostgreSQL, pgvector, Weaviate, Redis, AWS, Vercel, Datadog, Shopify APIs</p></div>
+      <div><h3>Vision and speech</h3><p>MediaPipe, CNNs, vision models for image extraction, Faster-Whisper, TTS</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Tell me what's breaking.</h2>
+    <p class="intro" style="margin-bottom:0">Thirty minutes, no deck needed. If I can help, I'll tell you how. If I can't, I'll tell you that too.</p>
+    <ol class="steps">
+      <li><h3>Book a call</h3><p><a href="https://calendly.com/shama-keskar/30min">Pick a time on my calendar</a>. No preparation needed.</p></li>
+      <li><h3>Share details if you like</h3><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8ahHxmyxrzSdmb_wDQeAN0fPlnVA7mb8KmPhACh8DTZrc3g/viewform">Fill out a short form</a> about what you're building and where it's failing.</p></li>
+      <li><h3>Get a proposal</h3><p>If there's a fit, you get scope, timeline and a fixed price in writing within 48 hours.</p></li>
+    </ol>
+    <a class="btn teal" href="https://calendly.com/shama-keskar/30min">Book a 30-minute call</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Shama Keskar, Seattle</span>
+    <nav aria-label="Contact">
+      <a href="mailto:shama.keskar@gmail.com">shama.keskar@gmail.com</a>
+      <a href="https://github.com/ShamaVox">GitHub</a>
+      <a href="https://www.linkedin.com/in/shamakeskar">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var rows = document.querySelectorAll('#rows .row');
+  var meter = document.getElementById('meter');
+  var msg = document.getElementById('msg');
+  var raw = [
+    {v:'Linen Wrap Midi Dress'},
+    {v:'<del>Nvy/NV</del>', low:'0.61'},
+    {v:'<del>S-XL</del>', low:'0.58'},
+    {v:'$42.00'},
+    {v:'24'}
+  ];
+  var final = [];
+  rows.forEach(function(r){
+    var v = r.querySelector('.v'), t = r.querySelector('.tag');
+    final.push({v:v.innerHTML, cls:t.className.replace('tag','').trim(), txt:t.textContent});
+    v.innerHTML = '&nbsp;'; t.className = 'tag'; t.textContent = 'waiting';
+  });
+  meter.style.width = '0'; msg.className = 'foot-msg'; msg.textContent = 'Checking 5 fields';
+  var done = 0, i = 0;
+  function set(k, html, cls, txt){ var r=rows[k]; r.querySelector('.v').innerHTML=html; var t=r.querySelector('.tag'); t.className='tag '+cls; t.textContent=txt; }
+  function finish(k){ set(k, final[k].v, final[k].cls, final[k].txt); done++; meter.style.width=(done/5*100)+'%'; msg.textContent = done+' of 5 fields checked'; if(done===5){ msg.className='foot-msg done'; msg.textContent='5 of 5 fields ready to publish'; } }
+  function next(){
+    if (i >= rows.length) return;
+    var k = i;
+    set(k, raw[k].v, '', 'checking');
+    if (raw[k].low){
+      setTimeout(function(){ set(k, raw[k].v, 'bad', 'confidence '+raw[k].low); }, 450);
+      setTimeout(function(){ finish(k); i++; next(); }, 1350);
+    } else {
+      setTimeout(function(){ finish(k); i++; next(); }, 450);
+    }
+  }
+  setTimeout(next, 600);
+})();
+</script>
+</body>
+</html>
