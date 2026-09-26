@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Shama Keskar | Hands-on Senior AI Engineer & Fractional CTO</title>
+  <title>Shama Keskar | Hands-on AI Product Engineer & Fractional CTO</title>
   <meta name="description" content="Shama Keskar is a hands-on AI product engineer and fractional CTO who helps founders build AI products from idea to production and make them dependable enough to grow.">
   <meta name="theme-color" content="#0b1f2a">
-  <meta property="og:title" content="Shama Keskar | Hands-on Sernior AI Engineer & Fractional CTO">
+  <meta property="og:title" content="Shama Keskar | Hands-on AI Product Engineer & Fractional CTO">
   <meta property="og:description" content="I build AI products from idea to production—and make them dependable enough to grow.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,6 +71,12 @@
     .hero-lede strong { color: #fff; }
     .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
     .hero-note { margin: 19px 0 0; color: #91abb3; font-size: 14px; }
+    .hero-services { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; max-width: 680px; margin-top: 34px; }
+    .hero-service { padding: 15px 15px 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 8px; background: rgba(255,255,255,.055); }
+    .hero-service strong { display: block; margin-bottom: 4px; color: #fff; font: 700 15px var(--serif); }
+    .hero-service span { display: block; color: #a9c2c8; font-size: 13px; line-height: 1.35; }
+    @media (max-width: 700px) { .hero-services { grid-template-columns: 1fr; } }
+
     .hero-note a { color: #d8e7e7; }
     .proof-card { position: relative; background: var(--white); color: var(--ink); border-radius: 16px; padding: 23px; box-shadow: 0 30px 80px rgba(0,0,0,.28); }
     .proof-top { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
@@ -241,7 +247,7 @@
         <a href="#case-study">Proof</a>
         <a href="#work-with-me">Work with me</a>
         <a href="#background">Background</a>
-        <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Book a call</a>
+        <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Discuss a project</a>
       </nav>
     </div>
   </header>
@@ -250,27 +256,19 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Hands-on AI product engineering · fractional CTO</p>
-          <h1>I build AI products from idea to production—and make them <em>dependable enough to grow.</em></h1>
-          <p class="hero-lede">Whether you have an AI idea, an early MVP, or a live product with real customers, I help you make the next technical leap: validate the architecture, build the product, ship the hard parts, and make sure the system works beyond the demo.</p>
-          <p class="hero-note">Product architecture, full-stack engineering, LLM and agentic workflows, integrations, evals, validation, monitoring, and repair loops.</p>
+          <p class="eyebrow">Hands-on AI product engineer · fractional CTO</p>
+          <h1>I build AI products <em>from idea to production.</em></h1>
+          <p class="hero-lede">I help founders turn an AI idea, early product, or live customer business into the next version that is ready to use, sell, and grow.</p>
           <div class="button-row">
-            <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Talk through your product</a>
-            <a class="button button-outline" href="#work-with-me">See how I can help</a>
+            <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Discuss your project</a>
+            <a class="button button-outline" href="#work-with-me">See services</a>
           </div>
-          <p class="hero-note">Former CTO/cofounder · Google · LinkedIn · Amazon · <a href="https://github.com/ShamaVox">View the code</a></p>
-        </div>
-
-        <div class="proof-card" aria-label="Illustration of a catalog record being checked before publication">
-          <div class="proof-top"><div><span class="proof-label">Reliability pass</span><div class="proof-title">Catalog record 214</div></div><span>production pattern</span></div>
-          <ul class="proof-list">
-            <li><span class="check">✓</span><span>Product: Linen Wrap Midi Dress</span><span class="status">verified</span></li>
-            <li><span class="check">✓</span><span>Color: <s style="color:#bd574b">Nvy / NV</s> → Navy</span><span class="status review">repaired</span></li>
-            <li><span class="check">✓</span><span>Size run: S, M, L, XL</span><span class="status review">repaired</span></li>
-            <li><span class="check">✓</span><span>Price: $42.00</span><span class="status">verified</span></li>
-            <li><span class="check">✓</span><span>Quantity: 24</span><span class="status">verified</span></li>
-          </ul>
-          <div class="proof-foot"><span>5 fields checked</span><strong>ready to publish</strong></div>
+          <p class="hero-note">I can help you <strong>define the product, build the system, or lead the next stage of growth.</strong></p>
+          <div class="hero-services" aria-label="Services">
+            <div class="hero-service"><strong>Build an AI product</strong><span>Idea to MVP or production milestone.</span></div>
+            <div class="hero-service"><strong>Improve a live product</strong><span>Quality, scale, cost, and customer readiness.</span></div>
+            <div class="hero-service"><strong>Fractional CTO</strong><span>Technical leadership plus hands-on delivery.</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -278,8 +276,8 @@
     <section class="surface" id="problem">
       <div class="wrap problem-grid">
         <div>
-          <p class="section-kicker">The gap between demo and product</p>
-          <p class="problem-lede">Most AI systems do not fail because the model cannot produce an answer. They fail because the team cannot measure, explain, or contain the mistakes.</p>
+          <p class="section-kicker">What founders need next</p>
+          <p class="problem-lede">Good AI products need more than a model. They need a clear product boundary, strong engineering, and a path from first users to a business that can grow.</p>
         </div>
         <div class="question-grid">
           <div class="question"><strong>Quality</strong>How often is the output correct on real customer inputs?</div>
@@ -304,17 +302,17 @@
     <section class="sprint-section" id="work-with-me">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">The best place to start</p>
-          <h2>One workflow. Fifteen business days. A number you can trust.</h2>
-          <p class="section-intro">The AI Reliability Sprint is a fixed-scope intervention for one LLM or agentic feature that is not holding up in production or a customer pilot. If you are earlier than that, start with an AI product build or technical scoping engagement.</p>
+          <p class="section-kicker">For teams with a live AI workflow</p>
+          <h2>When your product works—but needs to work better.</h2>
+          <p class="section-intro">For a live product or customer pilot, I can take one important workflow and improve its quality, operating cost, observability, and readiness for more customers. If you are earlier than that, start with an AI product build or technical scoping engagement.</p>
         </div>
         <div class="sprint-grid">
           <div class="sprint-card">
-            <div class="sprint-card-head"><h3>15-Day AI Reliability Sprint</h3><p>Fixed scope. Fixed timeline. Fixed price agreed before we start.</p></div>
+            <div class="sprint-card-head"><h3>15-Day AI Production Sprint</h3><p>Fixed scope. Fixed timeline. Fixed price agreed before we start.</p></div>
             <div class="sprint-body">
-              <div class="week"><strong>Days 1–5</strong><span>Collect representative failures from logs, users, support tickets, or pilot data. Build the golden set and measure first-pass success.</span></div>
-              <div class="week"><strong>Days 6–10</strong><span>Add validation, confidence thresholds, and bounded repair. Fix the failure types that cost the business most.</span></div>
-              <div class="week"><strong>Days 11–15</strong><span>Set up regression checks and monitoring. Document the system and hand the code and operating playbook to your team.</span></div>
+              <div class="week"><strong>Days 1–5</strong><span>Understand the real customer problem, inspect representative inputs, and establish a clear baseline.</span></div>
+              <div class="week"><strong>Days 6–10</strong><span>Fix the highest-impact product and engineering issues, then add the right safeguards and workflows.</span></div>
+              <div class="week"><strong>Days 11–15</strong><span>Ship the milestone, document the system, and leave your team with a clear path to operate and scale it.</span></div>
               <div class="deliverables"><strong>You finish with</strong><ul><li>A quality number you can track</li><li>Failure modes your team can see and reproduce</li><li>Code, tests, instrumentation, and a prioritized backlog</li><li>A clear decision about what is ready for the next pilot or release</li></ul></div>
               <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Discuss a sprint</a>
             </div>
@@ -396,13 +394,13 @@
 
     <section class="contact" id="contact">
       <div class="wrap">
-        <div class="section-head"><p class="section-kicker">Start with the failure</p><h2>Tell me what is breaking.</h2><p class="section-intro">Thirty minutes. No deck required. Tell me what you are building, how far along it is, and what the next technical leap needs to be. If I can help, I’ll tell you how. If I can’t, I’ll tell you that too.</p></div>
+        <div class="section-head"><p class="section-kicker">Start with the product</p><h2>Tell me what you are building.</h2><p class="section-intro">Thirty minutes. No deck required. Tell me what you are building, how far along it is, and what the next technical leap needs to be. If I can help, I will tell you how. If I cannot, I will tell you that too.</p></div>
         <div class="steps">
-          <div class="step"><span class="step-number">01</span><h3>Book a conversation</h3><p><a href="https://calendly.com/shama-keskar/30min">Pick a time on my calendar</a>. No preparation needed.</p></div>
+          <div class="step"><span class="step-number">01</span><h3>Discuss the product</h3><p><a href="https://calendly.com/shama-keskar/30min">Pick a time on my calendar</a>. No preparation needed.</p></div>
           <div class="step"><span class="step-number">02</span><h3>Share the context</h3><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8ahHxmyxrzSdmb_wDQeAN0fPlnVA7mb8KmPhACh8DTZrc3g/viewform">Send a few details</a> about your idea, product stage, customers, and next milestone.</p></div>
           <div class="step"><span class="step-number">03</span><h3>Get a clear next step</h3><p>If there is a fit, you get scope, timeline, and a fixed price in writing within 48 hours.</p></div>
         </div>
-        <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Book a 30-minute call</a>
+        <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Discuss your project</a>
       </div>
     </section>
   </main>
