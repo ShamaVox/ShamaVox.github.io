@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Shama Keskar | Fractional & Interim CTO</title>
-  <meta name="description" content="Hands-on fractional and interim CTO. I take your prototype or MVP to a reliable product your customers trust, and build the team and delivery system that runs it. Engagements through Shama AI Ventures LLC.">
+  <title>Shama Keskar | AI Reliability Sprint &amp; Fractional CTO</title>
+  <meta name="description" content="Start with a fixed-price, 15-day AI Reliability Sprint that takes your prototype or MVP to a product customers trust. Then hands-on fractional or interim CTO support if it fits. Engagements through Shama AI Ventures LLC.">
   <meta name="theme-color" content="#0b1f2a">
   <link rel="canonical" href="https://shamavox.github.io/">
-  <meta property="og:title" content="Shama Keskar | Fractional & Interim CTO">
+  <meta property="og:title" content="Shama Keskar | AI Reliability Sprint &amp; Fractional CTO">
   <meta property="og:description" content="From prototype to a product your customers trust. Hands-on fractional CTO, working directly with the CEO.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shamavox.github.io/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Shama Keskar | Fractional & Interim CTO">
+  <meta name="twitter:title" content="Shama Keskar | AI Reliability Sprint &amp; Fractional CTO">
   <meta name="twitter:description" content="From prototype to a product your customers trust.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +123,36 @@
     .row span { color: var(--muted); }
     .terms { margin: 26px 0 0; color: var(--muted); font-size: 15px; }
 
+
+    /* Sample deliverable */
+    .sample-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,.75fr); gap: 28px; align-items: start; }
+    .report { background: var(--white); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(16,42,58,.08); }
+    .report-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 18px 24px; background: var(--navy); color: #fff; }
+    .report-head strong { font: 700 17px var(--serif); }
+    .report-head span { color: #9fc0c6; font-size: 13px; }
+    .tag { display: inline-block; margin: 18px 24px 0; padding: 4px 10px; border-radius: 999px; background: var(--gold-pale); color: #7a5413; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .report-body { padding: 8px 24px 24px; }
+    .report-body h4 { margin: 22px 0 10px; font: 700 13px var(--sans); color: var(--teal-dark); letter-spacing: .1em; text-transform: uppercase; }
+    .score { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .score div { padding: 14px; border-radius: 10px; background: var(--paper); }
+    .score b { display: block; font: 700 24px/1 var(--serif); color: var(--ink); }
+    .score small { color: var(--muted); font-size: 13px; }
+    .tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .tbl th { text-align: left; color: var(--muted); font-weight: 600; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+    .tbl td { padding: 9px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pill.fixed { background: var(--teal-pale); color: var(--teal-dark); }
+    .pill.next { background: var(--blue-pale); color: #2f6482; }
+    .checks { margin: 0; padding: 0; list-style: none; }
+    .checks li { position: relative; padding: 6px 0 6px 26px; color: var(--muted); font-size: 15px; }
+    .checks li::before { content: "✓"; position: absolute; left: 0; top: 6px; color: var(--teal-dark); font-weight: 700; }
+    .walk { display: grid; gap: 12px; }
+    .walk-step { padding: 18px 20px; border-radius: 12px; background: var(--white); border: 1px solid var(--line); }
+    .walk-step span { display: block; margin-bottom: 4px; color: var(--teal-dark); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .walk-step p { margin: 0; color: var(--muted); font-size: 15px; }
+    .walk-step strong { color: var(--ink); }
+    .table-scroll { overflow-x: auto; }
+
     /* 4. Proof */
     .case-copy { max-width: 760px; }
     .case-copy p { margin: 0 0 18px; color: var(--muted); font-size: 18px; }
@@ -168,6 +198,7 @@
       .hero-grid, .work-grid { grid-template-columns: 1fr; gap: 32px; }
       .fit-list { grid-template-columns: 1fr; }
       .creds { grid-template-columns: 1fr; }
+      .sample-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 700px) {
       .wrap { width: min(var(--max), calc(100% - 32px)); }
@@ -180,6 +211,9 @@
       .lede { font-size: 17px; }
       .pipeline { grid-template-columns: 1fr 1fr; }
       .metrics { grid-template-columns: 1fr; }
+      .score { grid-template-columns: 1fr; }
+      .report-body, .report-head { padding-left: 16px; padding-right: 16px; }
+      .tag { margin-left: 16px; }
     }
     @media (max-width: 450px) {
       .pipeline { grid-template-columns: 1fr; }
@@ -200,7 +234,8 @@
       <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-hidden="true">
       <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span><span class="skip">Menu</span></label>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#how">How I work</a>
+        <a href="#how">The Sprint</a>
+        <a href="#sample">What you get</a>
         <a href="#proof">Proof</a>
         <a href="#background">Background</a>
         <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Book a call</a>
@@ -213,12 +248,12 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Fractional &amp; Interim CTO</p>
+          <p class="eyebrow">15-Day Reliability Sprint · Fractional CTO</p>
           <h1>From prototype to a product <em>your customers trust.</em></h1>
-          <p class="lede">I take your prototype or MVP to a reliable product, and build the team and delivery system that runs it. <strong>Hands-on CTO, working directly with the CEO.</strong></p>
+          <p class="lede">Start with a fixed-price, 15-day Reliability Sprint: I measure where your AI product breaks, fix the failures that matter most, and hand you a quality number you can track. <strong>Then, if it fits, I stay on as your hands-on CTO.</strong></p>
           <div class="button-row">
             <a class="button button-primary" href="https://calendly.com/shama-keskar/30min">Book a 30-minute call</a>
-            <a class="button button-outline" href="#how">How I work</a>
+            <a class="button button-outline" href="#sample">See a sample deliverable</a>
           </div>
         </div>
         <aside class="proof" aria-label="Headline result">
@@ -246,7 +281,7 @@
     <section class="work" id="how">
       <div class="wrap">
         <p class="kicker">How I work</p>
-        <h2>Start with a sprint. Stay as your CTO if it fits.</h2>
+        <h2>Start with a 15-day sprint. Stay as your CTO if it fits.</h2>
         <p class="intro">Every engagement is fixed-scope, in writing, and contracted through Shama AI Ventures LLC.</p>
         <div class="work-grid">
           <article class="card">
@@ -279,6 +314,56 @@
       </div>
     </section>
 
+
+    <!-- 3b. Sample deliverable -->
+    <section id="sample">
+      <div class="wrap">
+        <p class="kicker">What you get</p>
+        <h2>Here's what lands on your desk on day 15.</h2>
+        <p class="intro">No slide deck of opinions. Working code in your repo, a quality number you can track every week, and a clear list of what to fix next. Below is an example report.</p>
+        <div class="sample-grid">
+          <article class="report" aria-label="Example sprint report">
+            <div class="report-head"><strong>Reliability Sprint Report</strong><span>Example client · AI document assistant</span></div>
+            <span class="tag">Illustrative example, not client data</span>
+            <div class="report-body">
+              <h4>1. Quality baseline</h4>
+              <div class="score">
+                <div><b>62% → 91%</b><small>first-pass success on the golden set</small></div>
+                <div><b>240</b><small>real customer cases in the golden set</small></div>
+                <div><b>0</b><small>regressions shipped since the CI gate went live</small></div>
+              </div>
+              <h4>2. Top failures, ranked by customer impact</h4>
+              <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>Failure</th><th>Share of errors</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Wrong field pulled from multi-page inputs</td><td>31%</td><td><span class="pill fixed">Fixed</span></td></tr>
+                  <tr><td>Confident answer with no source</td><td>22%</td><td><span class="pill fixed">Fixed</span></td></tr>
+                  <tr><td>Silent failure on unusual formats</td><td>17%</td><td><span class="pill fixed">Fixed</span></td></tr>
+                  <tr><td>Slow responses on large files</td><td>11%</td><td><span class="pill next">Backlog #1</span></td></tr>
+                </tbody>
+              </table>
+              </div>
+              <h4>3. Handed over</h4>
+              <ul class="checks">
+                <li>Golden set and eval harness in your repo</li>
+                <li>CI gate that blocks releases when quality drops</li>
+                <li>Validation, confidence scoring and human review on risky outputs</li>
+                <li>Dashboard and alerts your team can read</li>
+                <li>Prioritized backlog with effort and impact for each item</li>
+              </ul>
+            </div>
+          </article>
+          <div class="walk">
+            <div class="walk-step"><span>Day 1</span><p><strong>Kickoff, 60 minutes.</strong> We agree what "working" means for your customers, and I get access to real inputs.</p></div>
+            <div class="walk-step"><span>Day 5</span><p><strong>Baseline review.</strong> You see your real quality number for the first time, and where it breaks.</p></div>
+            <div class="walk-step"><span>Day 10</span><p><strong>Mid-sprint check-in.</strong> The top failures are fixed in code, and the number has moved.</p></div>
+            <div class="walk-step"><span>Day 15</span><p><strong>Handover walkthrough.</strong> I walk your team through the report, the code and the backlog. You own all of it.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 4. Proof -->
     <section id="proof">
       <div class="wrap">
@@ -307,7 +392,7 @@
     <section class="background" id="background">
       <div class="wrap">
         <p class="kicker">Background</p>
-        <p class="bridge">For 16 years, reliability meant automation, CI/CD and release engineering. Now it means evals, observability and verify-and-repair loops for AI. <em>Same discipline, new substrate.</em></p>
+        <p class="bridge">For 18 years, reliability meant automation, CI/CD and release engineering. Now it means evals, observability and verify-and-repair loops for AI. <em>Same discipline, new substrate.</em></p>
         <p class="bg-copy">I led quality and engineering productivity at Google, LinkedIn, Visa and Amazon, where I designed the test platform that moved Alexa from releases every few months to <strong>weekly</strong>, and built productivity tooling that saved developers <strong>6 to 10 hours</strong> each. Then I became a technical cofounder three times, building each product's first production system myself.</p>
         <div class="creds">
           <div class="cred"><span class="label">Quality &amp; engineering productivity</span><p>Google · LinkedIn · Visa · Amazon</p></div>
